@@ -1,0 +1,37 @@
+.bigSearchbar input[type=text] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 265px;
+  padding: 13px;
+  font-size: 18px;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  float: left;
+  height: 50px;
+  width: 500px;
+  background: #f1f1f1;
+}
+
+.bigSearchbar button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 265px;
+  float: left;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background: lavender;
+  color: rebeccapurple;
+  font-size: 16.5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.bigSearchbar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
