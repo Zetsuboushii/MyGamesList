@@ -83,6 +83,8 @@ try {
      * $image = $rows[0];
      * $title = $rows[1];
      * $platform = $rows[2];
+     *
+     *
      */ ?>
     <div class='mainbox' style='width: 1070px; height: 1000px'>
       <h4>Ergebnisse</h4>
