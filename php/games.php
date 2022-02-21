@@ -75,35 +75,62 @@ try {
       <button type="submit">Los!</button>
     </form>
 
-    <?php
-    if ($_POST["search"] || $_POST["submit"]){
-      $search = $_POST["search"];
-      echo "<div class='mainbox' style='width: 1070px; height: 500px'>
-        <h4>Ergebnisse</h4>
-        <ul class='gallery'>
-        <li>";
-          $stmt = $connection->query("SELECT imgCover, title FROM game WHERE title LIKE '%$search%'");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-    echo "</li></ul></div>";
-    }
-    ?>
+    <? php /**
+     * if ($_POST["search"] || $_POST["submit"]) {
+     * $search = $_POST["search"];
+     * $stmt = $connection->query("SELECT imgCover, title, platform FROM game WHERE title LIKE '%$search%' ORDER BY releaseDate");
+     * while ($rows = $stmt->fetch()) {
+     * $image = $rows[0];
+     * $title = $rows[1];
+     * $platform = $rows[2];
+     */ ?>
+    <div class='mainbox' style='width: 1070px; height: 1000px'>
+      <h4>Ergebnisse</h4>
+      <ul class='search-results'>
+        <li>
+          <p>
+            <a href='#'>
+              <img src='../img/game_covers/game0001_cover.png'>
+            </a>
+          </p>
+          <div class='search-results-info'>
+            <h4>
+              <a href='#'>Pokemon Legends</a>
+              |
+              <a href='#'>Switch</a>
+            </h4>
+          </div>
+        </li>
+        <li>
+          <p>
+            <a href='#'>
+              <img src='../img/game_covers/game0006_cover.png'>
+            </a>
+          </p>
+          <div class='search-results-info'>
+            <h4>
+              <a href='#'>Pokemon Legends</a>
+              |
+              <a href='#'>Switch</a>
+            </h4>
+          </div>
+        </li>
+        <li>
+          <p>
+            <a href='#'>
+              <img src='../img/game_covers/game0006_cover.png'>
+            </a>
+          </p>
+          <div class='search-results-info'>
+            <h4>
+              <a href='#'>Pokemon Legends</a>
+              |
+              <a href='#'>Switch</a>
+            </h4>
+          </div>
+        </li>
+      </ul>
+    </div>
 
 
     <div class="mainbox" style="width: 1070px; height: 500px">

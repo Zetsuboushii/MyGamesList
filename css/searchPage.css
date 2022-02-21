@@ -35,3 +35,64 @@
   clear: both;
   display: table;
 }
+
+
+.search-results {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.search-results li {
+  background: lavender;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 200px;
+  width: 1050px;
+  border: solid rebeccapurple 1px;
+  border-left: 1px;
+  border-right: 1px;
+  float: left;
+  padding: 5px;
+  display: table;
+}
+
+.search-results img {
+  margin: auto;
+  vertical-align: center;
+  alignment: center;
+  max-height: 300px;
+  max-width: 150px;
+  border: solid gray 1px;
+}
+
+.search-results a {
+  padding: 0;
+  margin: 0;
+}
+
+.search-results a:hover {
+  text-decoration: underline;
+}
+
+.search-results p {
+  display: table-cell;
+  width: 150px;
+}
+
+.search-results-info {
+  margin-left: 10px;
+  display: table-cell;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+
+.search-results-info h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
