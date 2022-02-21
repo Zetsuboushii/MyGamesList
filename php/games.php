@@ -70,18 +70,41 @@ try {
 
   <div class="content_box">
 
-    <form class="bigSearchbar" action="#">
-      <input type="text" name='query'>
-      <input type="submit" value="Search" placeholder="Suchen nach..." name="suche">
-      <button name="submit">Los!</button>
+    <form class="bigSearchbar" action="games.php" method="post">
+      <input name="search" type="text" placeholder="Suchen nach...">
+      <button type="submit">Los!</button>
     </form>
 
     <?php
-      $stmt = $connection->query("SELECT title FROM game WHERE title LIKE '%.$_GET[query].%'");
-    while ($rows = $stmt->fetch()) {
-      echo "<p>$rows[0]</p>";
+    if ($_POST["search"] || $_POST["submit"]){
+      $search = $_POST["search"];
+      echo "<div class='mainbox' style='width: 1070px; height: 500px'>
+        <h4>Ergebnisse</h4>
+        <ul class='gallery'>
+        <li>";
+          $stmt = $connection->query("SELECT imgCover, title FROM game WHERE title LIKE '%$search%'");
+          while ($rows = $stmt->fetch()) {
+            $image = $rows[0];
+            if (strlen($rows[1]) <= 30) {
+              $title = "<br>" . $rows[1];
+            } else {
+              $title = $rows[1];
+            }
+            echo "
+                <a target='_blank' href='#'>
+                    <img src='$image'>
+                </a>
+                <a href='#'>
+                    <p class='desc'>
+                        $title
+                    </p>
+                </a>
+            ";
+          }
+    echo "</li></ul></div>";
     }
     ?>
+
 
     <div class="mainbox" style="width: 1070px; height: 500px">
 
