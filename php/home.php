@@ -7,12 +7,8 @@
 <!--  Database Connection  -->
 <?php
 //Create Connection
-try {
-  $connection = new PDO('mysql:host=localhost;dbname=mgl', 'root', '');
-  $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  echo "Error: " . $e->getMessage();
-}
+$connection = null;
+include "connection.php";
 //Gallery Entry Limit
 $galleryLimit = 10;
 ?>
@@ -29,39 +25,7 @@ $galleryLimit = 10;
   <!--  Header End  -->
 
   <!--  Hotbar  -->
-  <ul class="hotbar">
-    <li><a href="home.php">Startseite</a></li>
-
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Spiele</a>
-      <div class="dropdown-content">
-        <a class="dropdown" href="games.php">Suche</a>
-      </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Plattformen</a>
-      <div class="dropdown-content">
-        <a class="dropdown" href="platforms.php">Suche</a>
-      </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Hilfe</a>
-      <dif class="dropdown-content">
-        <a class="dropdown" href="#">Über</a>
-        <a class="dropdown" href="#">FAQ</a>
-        <a class="dropdown" href="#">Impressum</a>
-      </dif>
-    </li>
-
-    <li style="float: right; alignment: center; margin-right: 8px">
-      <form class="searchbar" action="#">
-        <input type="text" placeholder="Suchen nach..." name="suche">
-        <button type="submit">Los!</button>
-      </form>
-    </li>
-  </ul>
+  <?php include "hotbar.html" ?>
 
   <p class="titlebar">
     Startseite

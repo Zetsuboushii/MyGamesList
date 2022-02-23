@@ -2,7 +2,7 @@
 <head>
   <link rel='stylesheet' href='../css/main.css'>
   <link rel='stylesheet' href='../css/searchPage.css'>
-  <title>Spiele</title>
+  <title>Suche</title>
 </head>
 <body>
 <!--  Database Connection  -->
@@ -29,27 +29,32 @@ $galleryLimit = 10;
   <?php include "hotbar.html" ?>
 
   <p class="titlebar">
-    Spiele
+    Suche
   </p>
   <!--  Hotbar End  -->
 
 
   <div class="content_box">
 
-    <form class="bigSearchbar" action="games.php" method="post">
-      <input name="search" type="text" placeholder="Suchen nach Spieletitel...">
+    <form class="bigSearchbar" action="searchAll.php" method="post">
+      <input name="search" type="text" placeholder="Suchen nach Spielen, Plattformen, ...">
       <button type="submit">Los!</button>
     </form>
 
 
     <?php
-    if ($_POST["search"] || $_POST["submit"]) {
+    if ($_POST["search"] || $_POST["submit"] || $_POST["hotbarSearch"] || $_POST["hotbarSubmit"]) {
       echo "
             <div class='mainbox' style='width: 1070px; height: 800px'>
             <h4>Suchergebnisse</h4>
                 <ul class='search-results'>
           ";
-      $search = $_POST["search"];
+      if ($_POST["search"]) {
+        $search = $_POST["search"];
+      } else {
+        $search = $_POST["hotbarSearch"];
+      }
+
       $stmt = $connection->query("SELECT g.imgCover, g.title, YEAR(g.releaseDate), p.name, g.synopsis FROM game g, platform p WHERE g.orgPlatform = p.pNo AND title LIKE '%$search%' ORDER BY g.releaseDate");
       while ($rows = $stmt->fetch()) {
         $image = $rows[0];
@@ -78,6 +83,34 @@ $galleryLimit = 10;
               </div>
             </li>";
       }
+      $stmt = $connection->query("SELECT p.imgLogo, p.name, YEAR(p.releaseDate), pub.name, p.synopsis FROM platform p, publisher pub WHERE p.manufacturer = pub.pubNo AND p.name LIKE '%$search%' OR p.manufacturer = pub.pubNo AND p.alias LIKE '%$search%'");
+      while ($rows = $stmt->fetch()) {
+        $image = $rows[0];
+        $name = $rows[1];
+        $release = $rows[2];
+        $manufacturer = $rows[3];
+        $synopsis = $rows[4];
+        echo "
+            <li>
+              <p>
+                <a target='_blank' href='#'>
+                  <img src='$image' style='border: none'>
+                </a>
+              </p>
+              <div class='search-results-info'>
+                <h4>
+                  <a href='#'>$name</a>
+                  |
+                  <a href='#'>$manufacturer</a>
+                  |
+                  $release
+                </h4>
+                <p>
+                  $synopsis
+                </p>
+              </div>
+            </li>";
+      }
       echo "
             </ul>
           </div>
@@ -89,13 +122,13 @@ $galleryLimit = 10;
       <h4>Vorschläge</h4>
       <ul class='gallery'>
       ";
-      $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT $galleryLimit");
+      $stmt = $connection->query("SELECT imgPhoto, name FROM platform ORDER BY RAND() LIMIT $galleryLimit");
       while ($rows = $stmt->fetch()) {
         $image = $rows[0];
         if (strlen($rows[1]) <= 30) {
-          $title = "<br>" . $rows[1];
+          $name = "<br>" . $rows[1];
         } else {
-          $title = $rows[1];
+          $name = $rows[1];
         }
         echo "
                 <li>
@@ -104,7 +137,7 @@ $galleryLimit = 10;
                 </a>
                 <a href='#'>
                     <p class='desc'>
-                        $title
+                        $name
                     </p>
                 </a>
                 </li>
