@@ -86,7 +86,7 @@ $galleryLimit = 10;
                 <ul class='search-results'>
           ";
       $search = $_POST["search"];
-      $stmt = $connection->query("SELECT p.imgLogo, p.name, YEAR(p.releaseDate), pub.name, p.synopsis FROM platform p, publisher pub WHERE p.manufacturer = pub.pubNo AND p.name LIKE '%$search%' OR p.alias LIKE '%$search%'");
+      $stmt = $connection->query("SELECT p.imgLogo, p.name, YEAR(p.releaseDate), pub.name, p.synopsis FROM platform p, publisher pub WHERE p.manufacturer = pub.pubNo AND p.name LIKE '%$search%' OR p.manufacturer = pub.pubNo AND p.alias LIKE '%$search%'");
       while ($rows = $stmt->fetch()) {
         $image = $rows[0];
         $name = $rows[1];
