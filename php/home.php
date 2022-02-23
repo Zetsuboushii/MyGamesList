@@ -13,6 +13,8 @@ try {
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
+//Gallery Entry Limit
+$galleryLimit = 10;
 ?>
 <!--  Database Connection End -->
 
@@ -69,21 +71,50 @@ try {
 
   <div class="content_box">
 
-    <div class="mainbox" style="width: 700px; height: 905px">
+
+    <?php
+    echo "
+    <div class='mainbox' style='width: 700px; height: 905px'>
 
       <h4>Vorschläge</h4>
-      <ul class="gallery">
+      <ul class='gallery'>
+        ";
+    $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT $galleryLimit");
+    while ($rows = $stmt->fetch()) {
+      $image = $rows[0];
+      if (strlen($rows[1]) <= 30) {
+        $title = "<br>" . $rows[1];
+      } else {
+        $title = $rows[1];
+      }
+      echo "
         <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT 1");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
+          <a target='_blank' href='#'>
+            <img src='$image'>
+          </a>
+          <a href='#'>
+            <p class='desc'>
+              $title
+            </p>
+          </a>
+        </li>
+        ";
+    }
+    echo "
+    </ul>
+    <h4>Q1 2022 Releases</h4>
+    <ul class='gallery'>
+    ";
+    $stmt = $connection->query("SELECT imgCover, title FROM game WHERE releaseDate BETWEEN CAST('2022-01-01' AS DATE) AND CAST('2022-03-31' AS DATE) ORDER BY releaseDate DESC");
+    while ($rows = $stmt->fetch()) {
+      $image = $rows[0];
+      if (strlen($rows[1]) <= 30) {
+        $title = "<br>" . $rows[1];
+      } else {
+        $title = $rows[1];
+      }
+      echo "
+            <li>
                 <a target='_blank' href='#'>
                     <img src='$image'>
                 </a>
@@ -92,94 +123,25 @@ try {
                         $title
                     </p>
                 </a>
+            </li>
             ";
-          }
-          ?>
-        </li>
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT 1");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-          ?>
-        </li>
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT 1");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-          ?>
-        </li>
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT 1");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-          ?>
-        </li>
-      </ul>
+    }
+    echo "
+    </ul>
 
-      <h4>Q1 2022 Releases</h4>
-      <ul class="gallery">
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game WHERE gNo = 6");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
+    <h4>Q4 2021 Releases</h4>
+    <ul class='gallery'>
+    ";
+    $stmt = $connection->query("SELECT imgCover, title FROM game WHERE releaseDate BETWEEN CAST('2021-10-01' AS DATE) AND CAST('2021-12-31' AS DATE) ORDER BY releaseDate DESC");
+    while ($rows = $stmt->fetch()) {
+      $image = $rows[0];
+      if (strlen($rows[1]) <= 30) {
+        $title = "<br>" . $rows[1];
+      } else {
+        $title = $rows[1];
+      }
+      echo "
+            <li>
                 <a target='_blank' href='#'>
                     <img src='$image'>
                 </a>
@@ -188,63 +150,14 @@ try {
                         $title
                     </p>
                 </a>
+            </li>
             ";
-          }
-          ?>
-        </li>
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game WHERE gNo = 7");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-          ?>
-        </li>
-      </ul>
-
-      <h4>Q4 2021 Releases</h4>
-      <ul class="gallery">
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game WHERE gNo = 8");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-          ?>
-        </li>
-      </ul>
-
+    }
+    echo "
+    </ul>
     </div>
+    ";
+    ?>
 
     <div class="mainbox" style="width: 350px; float: right">
       <h4>Aktuell bestbewerteste Titel</h4>

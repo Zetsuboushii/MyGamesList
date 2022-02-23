@@ -2,7 +2,7 @@
 <head>
   <link rel='stylesheet' href='../css/main.css'>
   <link rel='stylesheet' href='../css/searchPage.css'>
-  <title>Alle Spiele</title>
+  <title>Spiele</title>
 </head>
 <body>
 <!--  Database Connection  -->
@@ -14,6 +14,8 @@ try {
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
+//Gallery Entry Limit
+$galleryLimit = 10;
 ?>
 <!--  Database Connection End -->
 
@@ -71,85 +73,68 @@ try {
   <div class="content_box">
 
     <form class="bigSearchbar" action="games.php" method="post">
-      <input name="search" type="text" placeholder="Suchen nach...">
+      <input name="search" type="text" placeholder="Suchen nach Spieletitel...">
       <button type="submit">Los!</button>
     </form>
 
-    <? php /**
-     * if ($_POST["search"] || $_POST["submit"]) {
-     * $search = $_POST["search"];
-     * $stmt = $connection->query("SELECT imgCover, title, platform FROM game WHERE title LIKE '%$search%' ORDER BY releaseDate");
-     * while ($rows = $stmt->fetch()) {
-     * $image = $rows[0];
-     * $title = $rows[1];
-     * $platform = $rows[2];
-     *
-     *
-     */ ?>
-    <div class='mainbox' style='width: 1070px; height: 1000px'>
-      <h4>Ergebnisse</h4>
-      <ul class='search-results'>
-        <li>
-          <p>
-            <a href='#'>
-              <img src='../img/game_covers/game0001_cover.png'>
-            </a>
-          </p>
-          <div class='search-results-info'>
-            <h4>
-              <a href='#'>Pokemon Legends</a>
-              |
-              <a href='#'>Switch</a>
-            </h4>
-          </div>
-        </li>
-        <li>
-          <p>
-            <a href='#'>
-              <img src='../img/game_covers/game0006_cover.png'>
-            </a>
-          </p>
-          <div class='search-results-info'>
-            <h4>
-              <a href='#'>Pokemon Legends</a>
-              |
-              <a href='#'>Switch</a>
-            </h4>
-          </div>
-        </li>
-        <li>
-          <p>
-            <a href='#'>
-              <img src='../img/game_covers/game0006_cover.png'>
-            </a>
-          </p>
-          <div class='search-results-info'>
-            <h4>
-              <a href='#'>Pokemon Legends</a>
-              |
-              <a href='#'>Switch</a>
-            </h4>
-          </div>
-        </li>
-      </ul>
-    </div>
 
-
-    <div class="mainbox" style="width: 1070px; height: 500px">
+    <?php
+    if ($_POST["search"] || $_POST["submit"]) {
+      echo "
+            <div class='mainbox' style='width: 1070px; height: 800px'>
+            <h4>Suchergebnisse</h4>
+                <ul class='search-results'>
+          ";
+      $search = $_POST["search"];
+      $stmt = $connection->query("SELECT g.imgCover, g.title, YEAR(g.releaseDate), p.name, g.synopsis FROM game g, platform p WHERE g.orgPlatform = p.pNo AND title LIKE '%$search%' ORDER BY releaseDate");
+      while ($rows = $stmt->fetch()) {
+        $image = $rows[0];
+        $title = $rows[1];
+        $release = $rows[2];
+        $platform = $rows[3];
+        $synopsis = $rows[4];
+        echo "
+            <li>
+              <p>
+                <a target='_blank' href='#'>
+                  <img src='$image'>
+                </a>
+              </p>
+              <div class='search-results-info'>
+                <h4>
+                  <a href='#'>$title</a>
+                  |
+                  <a href='#'>$platform</a>
+                  |
+                  $release
+                </h4>
+                <p>
+                  $synopsis
+                </p>
+              </div>
+            </li>";
+      }
+      echo "
+            </ul>
+          </div>
+          ";
+    } else {
+      echo "
+      <div class='mainbox' style='width: 1070px; height: 500px'>
 
       <h4>Vorschläge</h4>
-      <ul class="gallery">
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT 1");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
+      <ul class='gallery'>
+      ";
+      $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT $galleryLimit");
+      while ($rows = $stmt->fetch()) {
+        $image = $rows[0];
+        if (strlen($rows[1]) <= 30) {
+          $title = "<br>" . $rows[1];
+        } else {
+          $title = $rows[1];
+        }
+        echo "
+                <li>
                 <a target='_blank' href='#'>
                     <img src='$image'>
                 </a>
@@ -158,81 +143,14 @@ try {
                         $title
                     </p>
                 </a>
+                </li>
             ";
-          }
-          ?>
-        </li>
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT 1");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-          ?>
-        </li>
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT 1");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-          ?>
-        </li>
-        <li>
-          <?php
-          $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT 1");
-          while ($rows = $stmt->fetch()) {
-            $image = $rows[0];
-            if (strlen($rows[1]) <= 30) {
-              $title = "<br>" . $rows[1];
-            } else {
-              $title = $rows[1];
-            }
-            echo "
-                <a target='_blank' href='#'>
-                    <img src='$image'>
-                </a>
-                <a href='#'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            ";
-          }
-          ?>
-        </li>
-      </ul>
-    </div>
+      }
+      echo "
+        </ul>
+        </div>";
+    }
+    ?>
 
 
   </div>

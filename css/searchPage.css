@@ -47,7 +47,6 @@
   background: lavender;
   margin-left: 5px;
   margin-right: 5px;
-  height: 200px;
   width: 1050px;
   border: solid rebeccapurple 1px;
   border-left: 1px;
@@ -57,16 +56,9 @@
   display: table;
 }
 
-.search-results img {
-  margin: auto;
-  vertical-align: center;
-  alignment: center;
-  max-height: 300px;
-  max-width: 150px;
-  border: solid gray 1px;
-}
-
 .search-results a {
+  color: #333333;
+  alignment: center;
   padding: 0;
   margin: 0;
 }
@@ -76,23 +68,35 @@
 }
 
 .search-results p {
-  display: table-cell;
-  width: 150px;
+  margin: 0 0 0 10px;
+}
+
+.search-results img {
+  alignment: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  max-height: 300px;
+  max-width: 150px;
+  border: solid gray 1px;
 }
 
 .search-results-info {
-  margin-left: 10px;
   display: table-cell;
   padding: 0;
-  margin: 0;
   vertical-align: top;
 }
 
 .search-results-info h4 {
   font-size: 18px;
   font-weight: bold;
-  color: #333333;
   border: none;
   padding: 0;
-  margin: 0;
+  margin-left: 10px;
+}
+
+.search-results-info p {
+  text-align: justify;
+  margin-left: 10px;
+  padding: 0;
+  width: 800px;
 }
