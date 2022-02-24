@@ -43,7 +43,7 @@ $galleryLimit = 10;
       <h4>Vorschläge</h4>
       <ul class='gallery'>
         ";
-    $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT $galleryLimit");
+    $stmt = $connection->query("SELECT imgCover, title, pagePath FROM game ORDER BY RAND() LIMIT $galleryLimit");
     while ($rows = $stmt->fetch()) {
       $image = $rows[0];
       if (strlen($rows[1]) <= 30) {
@@ -51,12 +51,13 @@ $galleryLimit = 10;
       } else {
         $title = $rows[1];
       }
+      $pagePath = $rows[2];
       echo "
         <li>
-          <a target='_blank' href='#'>
+          <a target='_blank' href='./games/$pagePath'>
             <img src='$image'>
           </a>
-          <a href='#'>
+          <a href='./games/$pagePath'>
             <p class='desc'>
               $title
             </p>
@@ -69,7 +70,7 @@ $galleryLimit = 10;
     <h4>Q1 2022 Releases</h4>
     <ul class='gallery'>
     ";
-    $stmt = $connection->query("SELECT imgCover, title FROM game WHERE releaseDate BETWEEN CAST('2022-01-01' AS DATE) AND CAST('2022-03-31' AS DATE) ORDER BY releaseDate DESC");
+    $stmt = $connection->query("SELECT imgCover, title, pagePath FROM game WHERE releaseDate BETWEEN CAST('2022-01-01' AS DATE) AND CAST('2022-03-31' AS DATE) ORDER BY releaseDate DESC");
     while ($rows = $stmt->fetch()) {
       $image = $rows[0];
       if (strlen($rows[1]) <= 30) {
@@ -77,12 +78,13 @@ $galleryLimit = 10;
       } else {
         $title = $rows[1];
       }
+      $pagePath = $rows[2];
       echo "
             <li>
-                <a target='_blank' href='#'>
+                <a target='_blank' href='./games/$pagePath'>
                     <img src='$image'>
                 </a>
-                <a href='#'>
+                <a href='./games/$pagePath'>
                     <p class='desc'>
                         $title
                     </p>
@@ -96,7 +98,7 @@ $galleryLimit = 10;
     <h4>Q4 2021 Releases</h4>
     <ul class='gallery'>
     ";
-    $stmt = $connection->query("SELECT imgCover, title FROM game WHERE releaseDate BETWEEN CAST('2021-10-01' AS DATE) AND CAST('2021-12-31' AS DATE) ORDER BY releaseDate DESC");
+    $stmt = $connection->query("SELECT imgCover, title, pagePath FROM game WHERE releaseDate BETWEEN CAST('2021-10-01' AS DATE) AND CAST('2021-12-31' AS DATE) ORDER BY releaseDate DESC");
     while ($rows = $stmt->fetch()) {
       $image = $rows[0];
       if (strlen($rows[1]) <= 30) {
@@ -104,12 +106,13 @@ $galleryLimit = 10;
       } else {
         $title = $rows[1];
       }
+      $pagePath = $rows[2];
       echo "
             <li>
-                <a target='_blank' href='#'>
+                <a target='_blank' href='./games/$pagePath'>
                     <img src='$image'>
                 </a>
-                <a href='#'>
+                <a href='./games/$pagePath'>
                     <p class='desc'>
                         $title
                     </p>
@@ -129,23 +132,25 @@ $galleryLimit = 10;
         <li>
           <span>1</span>
           <?php
-          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name FROM game g, platform p WHERE g.releaseDate IS NOT NULL AND g.orgPlatform = p.pNo AND g.releaseDate < NOW() AND DATEDIFF(NOW(), g.releaseDate) < 250 ORDER BY g.metaScore DESC LIMIT 1");
+          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name, g.pagePath, p.pagePath FROM game g, platform p WHERE g.releaseDate IS NOT NULL AND g.orgPlatform = p.pNo AND g.releaseDate < NOW() AND DATEDIFF(NOW(), g.releaseDate) < 250 ORDER BY g.metaScore DESC LIMIT 1");
           while ($rows = $stmt->fetch()) {
             $image = $rows[0];
             $title = $rows[1];
             $platform = $rows[2];
+            $gPagePath = $rows[3];
+            $pPagePath = $rows[4];
             echo "
                 <p>
-                    <a href='#'>
+                    <a href='./games/$gPagePath'>
                         <img src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
                     <h4>
-                        <a class='sidebox-info-title' href='#'>$title</a>
+                        <a class='sidebox-info-title' href='./games/$gPagePath'>$title</a>
                     </h4>
                     <br>
-                        <a class='sidebox-info-platform' href='#'>$platform</a>
+                        <a class='sidebox-info-platform' href='./platforms/$pPagePath'>$platform</a>
                 </div>
             ";
           }
@@ -154,23 +159,25 @@ $galleryLimit = 10;
         <li>
           <span>2</span>
           <?php
-          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name FROM game g, platform p WHERE g.releaseDate IS NOT NULL AND g.orgPlatform = p.pNo AND g.releaseDate < NOW() AND DATEDIFF(NOW(), g.releaseDate) < 250 ORDER BY g.metaScore DESC LIMIT 1 OFFSET 1");
+          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name, g.pagePath, p.pagePath FROM game g, platform p WHERE g.releaseDate IS NOT NULL AND g.orgPlatform = p.pNo AND g.releaseDate < NOW() AND DATEDIFF(NOW(), g.releaseDate) < 250 ORDER BY g.metaScore DESC LIMIT 1 OFFSET 1");
           while ($rows = $stmt->fetch()) {
             $image = $rows[0];
             $title = $rows[1];
             $platform = $rows[2];
+            $gPagePath = $rows[3];
+            $pPagePath = $rows[4];
             echo "
                 <p>
-                    <a href='#'>
+                    <a href='./games/$gPagePath'>
                         <img src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
                     <h4>
-                        <a class='sidebox-info-title' href='#'>$title</a>
+                        <a class='sidebox-info-title' href='./games/$gPagePath'>$title</a>
                     </h4>
                     <br>
-                        <a class='sidebox-info-platform' href='#'>$platform</a>
+                        <a class='sidebox-info-platform' href='./platforms/$pPagePath'>$platform</a>
                 </div>
             ";
           }
@@ -179,23 +186,25 @@ $galleryLimit = 10;
         <li>
           <span>3</span>
           <?php
-          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name FROM game g, platform p WHERE g.releaseDate IS NOT NULL AND g.orgPlatform = p.pNo AND g.releaseDate < NOW() AND DATEDIFF(NOW(), g.releaseDate) < 250 ORDER BY g.metaScore DESC LIMIT 1 OFFSET 2");
+          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name, g.pagePath, p.pagePath FROM game g, platform p WHERE g.releaseDate IS NOT NULL AND g.orgPlatform = p.pNo AND g.releaseDate < NOW() AND DATEDIFF(NOW(), g.releaseDate) < 250 ORDER BY g.metaScore DESC LIMIT 1 OFFSET 2");
           while ($rows = $stmt->fetch()) {
             $image = $rows[0];
             $title = $rows[1];
             $platform = $rows[2];
+            $gPagePath = $rows[3];
+            $pPagePath = $rows[4];
             echo "
                 <p>
-                    <a href='#'>
+                    <a href='./games/$gPagePath'>
                         <img src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
                     <h4>
-                        <a class='sidebox-info-title' href='#'>$title</a>
+                        <a class='sidebox-info-title' href='./games/$gPagePath'>$title</a>
                     </h4>
                     <br>
-                        <a class='sidebox-info-platform' href='#'>$platform</a>
+                        <a class='sidebox-info-platform' href='./platforms/$pPagePath'>$platform</a>
                 </div>
             ";
           }
@@ -210,23 +219,25 @@ $galleryLimit = 10;
         <li>
           <span>1</span>
           <?php
-          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name FROM game g, platform p WHERE g.orgPlatform = p.pNo ORDER BY metaScore DESC LIMIT 1");
+          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name, g.pagePath, p.pagePath FROM game g, platform p WHERE g.orgPlatform = p.pNo ORDER BY metaScore DESC LIMIT 1");
           while ($rows = $stmt->fetch()) {
             $image = $rows[0];
             $title = $rows[1];
             $platform = $rows[2];
+            $gPagePath = $rows[3];
+            $pPagePath = $rows[4];
             echo "
                 <p>
-                    <a href='#'>
+                    <a href='./games/$gPagePath'>
                         <img src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
                     <h4>
-                        <a class='sidebox-info-title' href='#'>$title</a>
+                        <a class='sidebox-info-title' href='./games/$gPagePath'>$title</a>
                     </h4>
                     <br>
-                        <a class='sidebox-info-platform' href='#'>$platform</a>
+                        <a class='sidebox-info-platform' href='./platforms/$pPagePath'>$platform</a>
                 </div>
             ";
           }
@@ -235,23 +246,25 @@ $galleryLimit = 10;
         <li>
           <span>2</span>
           <?php
-          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name FROM game g, platform p WHERE g.orgPlatform = p.pNo ORDER BY metaScore DESC LIMIT 1 OFFSET 1");
+          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name, g.pagePath, p.pagePath FROM game g, platform p WHERE g.orgPlatform = p.pNo ORDER BY metaScore DESC LIMIT 1 OFFSET 1");
           while ($rows = $stmt->fetch()) {
             $image = $rows[0];
             $title = $rows[1];
             $platform = $rows[2];
+            $gPagePath = $rows[3];
+            $pPagePath = $rows[4];
             echo "
                 <p>
-                    <a href='#'>
+                    <a href='./games/$gPagePath'>
                         <img src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
                     <h4>
-                        <a class='sidebox-info-title' href='#'>$title</a>
+                        <a class='sidebox-info-title' href='./games/$gPagePath'>$title</a>
                     </h4>
                     <br>
-                        <a class='sidebox-info-platform' href='#'>$platform</a>
+                        <a class='sidebox-info-platform' href='./platforms/$pPagePath'>$platform</a>
                 </div>
             ";
           }
@@ -260,23 +273,25 @@ $galleryLimit = 10;
         <li>
           <span>3</span>
           <?php
-          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name FROM game g, platform p WHERE g.orgPlatform = p.pNo ORDER BY metaScore DESC LIMIT 1 OFFSET 2");
+          $stmt = $connection->query("SELECT DISTINCT g.imgCover, g.title, p.name, g.pagePath, p.pagePath FROM game g, platform p WHERE g.orgPlatform = p.pNo ORDER BY metaScore DESC LIMIT 1 OFFSET 2");
           while ($rows = $stmt->fetch()) {
             $image = $rows[0];
             $title = $rows[1];
             $platform = $rows[2];
+            $gPagePath = $rows[3];
+            $pPagePath = $rows[4];
             echo "
                 <p>
-                    <a href='#'>
+                    <a href='./games/$gPagePath'>
                         <img src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
                     <h4>
-                        <a class='sidebox-info-title' href='#'>$title</a>
+                        <a class='sidebox-info-title' href='./games/$gPagePath'>$title</a>
                     </h4>
                     <br>
-                        <a class='sidebox-info-platform' href='#'>$platform</a>
+                        <a class='sidebox-info-platform' href='./platforms/$pPagePath'>$platform</a>
                 </div>
             ";
           }

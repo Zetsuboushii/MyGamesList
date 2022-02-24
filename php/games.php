@@ -50,25 +50,27 @@ $galleryLimit = 10;
                 <ul class='search-results'>
           ";
       $search = $_POST["search"];
-      $stmt = $connection->query("SELECT g.imgCover, g.title, YEAR(g.releaseDate), p.name, g.synopsis FROM game g, platform p WHERE g.orgPlatform = p.pNo AND title LIKE '%$search%' ORDER BY g.releaseDate");
+      $stmt = $connection->query("SELECT g.imgCover, g.title, YEAR(g.releaseDate), p.name, g.synopsis, g.pagePath, p.pagePath FROM game g, platform p WHERE g.orgPlatform = p.pNo AND title LIKE '%$search%' ORDER BY g.releaseDate");
       while ($rows = $stmt->fetch()) {
         $image = $rows[0];
         $title = $rows[1];
         $release = $rows[2];
         $platform = $rows[3];
         $synopsis = $rows[4];
+        $gPagePath = $rows[5];
+        $pPagePath = $rows[6];
         echo "
             <li>
               <p>
-                <a target='_blank' href='#'>
+                <a target='_blank' href='./games/$gPagePath'>
                   <img src='$image'>
                 </a>
               </p>
               <div class='search-results-info'>
                 <h4>
-                  <a href='#'>$title</a>
+                  <a href='./games/$gPagePath'>$title</a>
                   |
-                  <a href='#'>$platform</a>
+                  <a href='./platforms/$pPagePath'>$platform</a>
                   |
                   $release
                 </h4>
@@ -89,7 +91,7 @@ $galleryLimit = 10;
       <h4>Vorschläge</h4>
       <ul class='gallery'>
       ";
-      $stmt = $connection->query("SELECT imgCover, title FROM game ORDER BY RAND() LIMIT $galleryLimit");
+      $stmt = $connection->query("SELECT imgCover, title, pagePath FROM game ORDER BY RAND() LIMIT $galleryLimit");
       while ($rows = $stmt->fetch()) {
         $image = $rows[0];
         if (strlen($rows[1]) <= 30) {
@@ -97,12 +99,13 @@ $galleryLimit = 10;
         } else {
           $title = $rows[1];
         }
+        $pagePath = $rows[2];
         echo "
                 <li>
-                <a target='_blank' href='#'>
+                <a target='_blank' href='./games/$pagePath'>
                     <img src='$image'>
                 </a>
-                <a href='#'>
+                <a href='./games/$pagePath'>
                     <p class='desc'>
                         $title
                     </p>
