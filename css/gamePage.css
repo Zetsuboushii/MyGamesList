@@ -1,8 +1,9 @@
 .leftbox {
   margin: 0;
+  margin-left: 5px;
   padding: 0;
   width: 300px;
-  height: 905px;
+  height: 1000px;
   float: left;
   border-style: solid;
   border-color: #aaaaaa;
@@ -34,5 +35,97 @@
 }
 
 .leftbox ul a:hover {
+  text-decoration: underline;
+}
+
+
+.rightbox {
+  margin: 0;
+  padding: 0;
+  width: 760px;
+  height: 1000px;
+  float: left;
+  border-style: solid;
+  border-color: #aaaaaa;
+  border-width: 1px;
+}
+
+.scoreBox {
+  display: table;
+  margin: 10px;
+  padding: 0;
+  width: 400px;
+  height: 100px;
+  float: left;
+  border-style: solid;
+  border-color: #aaaaaa;
+  border-width: 1px;
+  text-align: center;
+}
+
+.scoreBox h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.metaScoreBox {
+  display: table-cell;
+  margin: 5px;
+  margin-left: 0;
+  padding: 0;
+  width: 200px;
+  height: 90px;
+  border-right: 1px solid #aaaaaa;
+}
+
+.metaScore {
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  position: relative;
+  left: 65px;
+  top: 2px;
+}
+
+.metaScore h4 {
+  font-size: 30px;
+  color: white;
+  line-height: 70px;
+}
+
+.rankBox {
+  display: table-cell;
+  margin: 5px;
+  margin-left: 0;
+  padding: 0;
+  width: 200px;
+  height: 90px;
+  border-right: 1px solid #aaaaaa;
+}
+
+.rankBox h3 {
+  line-height: 15px;
+  font-size: 26px;
+}
+
+.synopsisBox {
+  float: left;
+  margin-left: 5px;
+  padding: 0;
+  border: 1px solid gray;
+  width: 750px;
+}
+
+.synopsisBox h4 {
+  border-bottom: 1px solid black;
+  margin: 5px;
+}
+
+.synopsisBox a {
+  color: #333333;
+}
+
+.synopsisBox a:hover {
   text-decoration: underline;
 }

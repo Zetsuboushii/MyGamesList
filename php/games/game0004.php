@@ -1,5 +1,5 @@
 <?php
-$gameNumber = 1;
+$gameNumber = 4;
 
 include "templateGame.php";
 ?>

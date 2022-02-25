@@ -1,5 +1,6 @@
 <html lang='de'>
 <head>
+  <link rel="icon" href="../favicon.ico">
   <link rel='stylesheet' href='../css/main.css'>
   <link rel='stylesheet' href='../css/searchPage.css'>
   <title>Plattformen</title>
