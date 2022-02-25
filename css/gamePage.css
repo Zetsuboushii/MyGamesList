@@ -8,6 +8,7 @@
   border-style: solid;
   border-color: #aaaaaa;
   border-width: 1px;
+  border-top: none;
 }
 
 .leftbox img {
@@ -48,6 +49,7 @@
   border-style: solid;
   border-color: #aaaaaa;
   border-width: 1px;
+  border-top: none;
 }
 
 .scoreBox {
