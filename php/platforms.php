@@ -18,16 +18,8 @@ $galleryLimit = 10;
 
 
 <div class="container">
-  <!--  Header  -->
-  <div class="logo">
-    <a href="home.php">
-      <img src="../img/logo.png" width="393">
-    </a>
-  </div>
-  <!--  Header End  -->
-
   <!--  Hotbar  -->
-  <?php include "hotbar.html" ?>
+  <?php include "hotbar.php" ?>
 
   <p class="titlebar">
     Plattformen

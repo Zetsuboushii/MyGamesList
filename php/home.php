@@ -18,15 +18,11 @@ $galleryLimit = 10;
 
 <div class="container">
   <!--  Header  -->
-  <div class="logo">
-    <a href="home.php">
-      <img src="../img/logo.png" width="393">
-    </a>
-  </div>
+
   <!--  Header End  -->
 
   <!--  Hotbar  -->
-  <?php include "hotbar.html" ?>
+  <?php include "hotbar.php" ?>
 
   <p class="titlebar">
     Startseite
@@ -35,8 +31,6 @@ $galleryLimit = 10;
 
 
   <div class="content_box">
-
-
     <?php
     echo "
     <div class='mainbox' style='width: 700px; height: 730px'>

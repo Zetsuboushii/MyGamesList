@@ -6,6 +6,7 @@ html {
 
 .logo {
   background-color: white;
+  height: ;
 }
 
 body {
@@ -115,6 +116,7 @@ form.searchbar input[type=text] {
   border-bottom-left-radius: 10px;
   float: left;
   width: 200px;
+  height: 41px;
   background: #f1f1f1;
 }
 
@@ -123,7 +125,8 @@ form.searchbar button {
   margin-bottom: 4px;
   float: left;
   width: 50px;
-  padding: 10px;
+  height: 41px;
+
   background: lavender;
   color: rebeccapurple;
   font-size: 16.5px;
@@ -156,10 +159,10 @@ form.searchbar::after {
 }
 
 
-div.content_box {
+.content_box {
   background-color: white;
   width: 1080px;
-  height: auto;
+  height: 100%;
   float: left;
   margin: 0;
 }
@@ -301,4 +304,50 @@ div.content_box {
 .sidebox-info-platform {
   color: slategrey;
   display: block;
+}
+
+.loginBox {
+  margin: auto;
+  margin-top: 65px;
+  margin-bottom: 65px;
+  display: block;
+  border: 1px solid rebeccapurple;
+  width: 500px;
+  height: 600px;
+}
+
+.loginBox h3 {
+  margin-top: 60px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.loginBox h5 {
+  margin-left: 100px;
+  margin-bottom: 0px;
+}
+
+.loginBox input {
+  width: 300px;
+  height: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.loginBox button {
+  width: 140px;
+  height: 40px;
+  border-radius: 2px;
+  border: none;
+  background-color: rebeccapurple;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 40px;
+  margin-left: 180px;
+
+}
+
+.loginBox button:hover {
+  cursor: pointer;
 }

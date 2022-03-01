@@ -3,7 +3,7 @@
   margin-left: 5px;
   padding: 0;
   width: 300px;
-  height: 1000px;
+  height: auto;
   float: left;
   border-style: solid;
   border-color: #aaaaaa;
@@ -44,7 +44,7 @@
   margin: 0;
   padding: 0;
   width: 760px;
-  height: 1000px;
+  height: auto;
   float: left;
   border-style: solid;
   border-color: #aaaaaa;
@@ -111,9 +111,45 @@
   font-size: 26px;
 }
 
-.synopsisBox {
+.listAddBox {
+  display: table;
+  margin: 10px;
+  margin-top: 0px;
+  padding: 0;
+  width: 400px;
+  height: 30px;
   float: left;
-  margin-left: 5px;
+  border-style: solid;
+  border-color: #aaaaaa;
+  border-width: 1px;
+  text-align: center;
+}
+
+.addBox {
+  display: table-cell;
+  margin: 5px;
+  margin-left: 0;
+  padding: 0;
+  width: 200px;
+  height: 25px;
+}
+
+.addBox addButton {
+
+}
+
+.scoreSelectBox {
+  display: table-cell;
+  margin: 5px;
+  margin-left: 0;
+  padding: 0;
+  width: 200px;
+  height: 25px;
+}
+
+.synopsisBox {
+  margin: 5px;
+  float: left;
   padding: 0;
   border: 1px solid gray;
   width: 750px;

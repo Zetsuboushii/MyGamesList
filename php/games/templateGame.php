@@ -61,6 +61,12 @@ while ($rows = $stmt->fetch()) {
       $remakePath = $nRows[1];
     }
   }
+
+  $stmt = $connection->query("SELECT title, pagePath FROM game WHERE refRemake = $gameNumber");
+  while ($nRows = $stmt->fetch()) {
+    $origin = $nRows[0];
+    $originPath = $nRows[1];
+  }
 }
 ?>
 
@@ -296,6 +302,20 @@ while ($rows = $stmt->fetch()) {
           <h3># <?php echo "$rank" ?></h3>
         </div>
       </div>
+      <div class='listAddBox'>
+        <div class='addBox'>
+          <?php
+          if (true){
+
+          };
+          ?>
+
+          <button name='listAdd'>kek +</button>
+        </div>
+        <div class='scoreSelectBox'>
+          kek
+        </div>
+      </div>
       <div class='synopsisBox'>
         <h4>Zusammenfassung:</h4>
         <ul style="list-style-type: none; text-align: justify; padding: 0 60px 20px 20px;">
@@ -305,7 +325,7 @@ while ($rows = $stmt->fetch()) {
         </ul>
 
         <?php
-        if ($prequel || $sequel || $remake) {
+        if ($prequel || $sequel || $remake || $origin) {
           echo "
           <h4>Verwandte Titel:</h4>
           <table style='text-align: left; margin-left: 20px'>";
@@ -322,6 +342,11 @@ while ($rows = $stmt->fetch()) {
           if ($remake) {
             echo "
             <tr><th>Remake:</th><th style='font-weight: normal'><a href='../games/$remakePath'>$remake</a></th></tr>
+            ";
+          }
+          if ($origin) {
+            echo "
+            <tr><th>Ursprünglicher Titel:</th><th style='font-weight: normal'><a href='../games/$originPath'>$origin</a></th></tr>
             ";
           }
           echo "</table>";
