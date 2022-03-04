@@ -33,9 +33,9 @@ $galleryLimit = 10;
         <form action="signup.php" method="post">
           <h3>Neuen Account erstellen</h3>
           <h5>Benutzername</h5>
-          <input name="username" size="16" type="text">
+          <input name="username" maxlength="16" type="text">
           <h5>Passwort</h5>
-          <input name="password" size="16" type="text">
+          <input name="password" maxlength="16" type="password">
           <button name="signup" type="submit">Sign Up</button>
         </form>
 

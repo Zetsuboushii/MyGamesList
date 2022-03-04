@@ -35,9 +35,9 @@ $galleryLimit = 10;
         <form action="login.php" method="post">
           <h3>Mit bestehendem Account anmelden</h3>
           <h5>Benutzername</h5>
-          <input name="username" size="16" type="text">
+          <input name="username" maxlength="16" type="text">
           <h5>Passwort</h5>
-          <input name="password" size="16" type="text">
+          <input name="password" maxlength="16" type="password">
           <button name="login" type="submit">Login</button>
           <h3 style="font-size: 16px">Noch kein Acccount?</h3>
           <button name="signUp" style="margin-top: 10px; color: rebeccapurple; background-color: lavender" type="submit">Sign up</button>

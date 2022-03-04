@@ -341,28 +341,54 @@ while ($rows = $stmt->fetch()) {
         ";
 
         if ($checkGame) {
+          $stmt = $connection->query("SELECT score FROM list WHERE refGame = $gameNumber AND refUser = $userId");
+          while ($rows = $stmt->fetch()) {
+            $setScore = $rows[0];
+          }
           echo "
-            <div class='scoreSelectDropdown'>
-                <div class='scoreSelectDropdown-a'><span style='margin: 5px'><div style='display: inline-block; color: yellow'>★</div><div style='display: inline-block; margin-left: 5px'>Score</div><div style='display: inline-block; margin-left: 65px'>▼</div></span></div>
-                <input type='checkbox'>
-                <div class='scoreSelectDropdown-c'>
-                    <ul>
-                        <li>
-                        <span>Score</span><input type='checkbox'><br>
-                        <span>10 - </span><input type='checkbox'>
-                        </li>
-                    </ul>
-                </div>
+            <div class='scoreSelect'>
+                <span style='margin: 5px'>
+                    <div style='display: inline-block; margin-left: 5px'>Score</div>
+                    <form action='#' method='post'>
+                        <input name='score' type='number' min='0' max='10' placeholder='$setScore'>/ 10
+                    </form>
+                    <div style='display: inline-block; color: yellow'>★</div>
+                </span>
             </div>
           ";
+          if (isset($_POST['score'])) {
+            $score = $_POST['score'];
+            $stmt = $connection->query("UPDATE list SET score = $score WHERE refUser = $userId AND refGame = $gameNumber");
+          }
         }
         echo "
-          </div>
+          </div>";
+
+
+        echo "
+          <div class='statusSelectBox'>";
+        if ($checkGame) {
+          echo "
+            <form action='#' method='post'>
+                <select id='status' name='status'>
+                    <option value='2'>Am Spielen</option>
+                    <option value='3'>Abgeschlossen</option>
+                    <option value='4' selected>Nicht fortgesetzt</option>
+                    <option value='5'>Abgebrochen</option>
+                    <option value='6'>Geplant</option>
+                </select>
+                <input type='submit' style='width: auto' value='✓'>
+            </form>
           ";
+          if ($_POST['status']) {
+            $status = $_POST['status'];
+            $stmt = $connection->query("UPDATE list SET refStatus = $status WHERE refUser = $userId AND refGame = $gameNumber");
+          }
+        }
 
-
-
-      echo "</div>";
+        echo "
+        </div>
+        </div>";
       }
 
       ?>

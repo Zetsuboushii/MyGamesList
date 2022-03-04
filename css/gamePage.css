@@ -122,7 +122,7 @@
   margin: 10px;
   margin-top: 0px;
   padding: 0;
-  width: 400px;
+  width: 600px;
   height: 30px;
   float: left;
   border-style: solid;
@@ -162,89 +162,34 @@
   height: 25px;
 }
 
-.scoreSelectDropdown {
-  z-index: 1;
-  position: relative;
-  display: inline-block;
-}
-
-.scoreSelectDropdown-a {
-  padding: 2px;
-  background: white;
-  position: relative;
-  width: 150px;
-  border: 1px solid rebeccapurple;
-  border-radius: 3px;
-  text-align: left;
-}
-
-.scoreSelectDropdown input:after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  display: block;
-  bottom: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: bottom left;
-  transition-duration: 0ms;
-}
-
-.scoreSelectDropdown input {
-  top: 0;
-  opacity: 0;
-  display: block;
-  padding: 0;
+.scoreSelect form {
   margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.scoreSelect input {
+  width: 24px;
   border: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  font-size: 16px;
+  text-align: center;
+  font-family: Arial;
+  border-bottom: 1px solid #333333;
 }
 
-.scoreSelectDropdown input:hover {
-  cursor: pointer;
+.scoreSelect input[type=number] {
+  -moz-appearance: textfield;
 }
 
-.scoreSelectDropdown input:checked:after {
-  transform: scaleX(1);
-}
-
-.scoreSelectDropdown input:checked ~ .scoreSelectDropdown-c {
-  transform: scaleY(1);
-}
-
-.scoreSelectDropdown-c {
-  display: block;
-  position: absolute;
-  background: white;
-  height: auto;
-  transform: scaleY(0);
-  transform-origin: top left;
-  transition-duration: 0ms;
-}
-
-.scoreSelectDropdown-c ul {
+.scoreSelect input::-webkit-outer-spin-button,
+             input::-webkit-inner-spin-button {
   margin: 0;
-  padding: 0;
-  list-style-type: none;
+  -webkit-appearance: none;
 }
 
-.scoreSelectDropdown-c li {
-  text-align: left;
-  display: block;
-  position: relative;
-  border: 1px solid rebeccapurple;
-  width: 154px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px #333333;
+.statusSelectBox {
+  width: 200px;
 }
-
-.scoreSelectDropdown-c span:hover {
-  background-color: #aaaaaa;
-}
-
 
 .synopsisBox {
   margin: 5px;
