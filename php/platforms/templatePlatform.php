@@ -75,7 +75,7 @@ while ($rows = $stmt->fetch()) {
   <!--  Header End  -->
 
   <!--  Hotbar  -->
-  <?php include "platformPageHotbar.html" ?>
+  <?php include "platformPageHotbar.php" ?>
 
   <p class="titlebar">
     <?php echo "$name" ?>

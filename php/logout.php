@@ -57,13 +57,14 @@ $galleryLimit = 10;
               $uNo = $rows[2];
               $uNoPad = $rows[3];
             }
-            if ($usernameInput == $dbUsername && $passwordInput == $dbPassword) {
+            if (password_verify($passwordInput, $dbPassword)) {
               $_SESSION['userid'] = $uNo;
               $_SESSION['username'] = $dbUsername;
               $_SESSION['userpassword'] = $dbPassword;
               $_SESSION['useridpadded'] = $uNoPad;
 
               echo '<div style="margin-left: 20px; margin-right: 20px; text-align: center; border-top: 1px solid rebeccapurple; border-bottom: 1px solid rebeccapurple; padding: 10px; background-color: lavender">Login erfolgreich</div>';
+              header("Refresh:0; url=home.php");
             } else {
               echo '<div style="margin-left: 20px; margin-right: 20px; text-align: center; border-top: 1px solid darkred; border-bottom: 1px solid darkred; padding: 10px; background-color: mistyrose">Benutzername oder Passwort falsch</div>';
             }

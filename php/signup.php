@@ -53,7 +53,8 @@ $galleryLimit = 10;
               $uNo = $rows[2];
             }
             if (!$dbUsername) {
-              $stmt = $connection->query("INSERT INTO user (username, password) VALUES ('$usernameInput', '$passwordInput')");
+              $passwordHash = password_hash($passwordInput, PASSWORD_DEFAULT);
+              $stmt = $connection->query("INSERT INTO user (username, password) VALUES ('$usernameInput', '$passwordHash')");
               $stmt = $connection->query("SELECT username, password, uNo, LPAD(uNo, 7, '0') FROM user WHERE username = '$usernameInput'");
               while ($rows = $stmt->fetch()) {
                 $dbUsername = $rows[0];
@@ -68,9 +69,10 @@ $galleryLimit = 10;
                 $_SESSION['useridpadded'] = $uNoPad;
 
 
-                copy("lists/listTemplate.php", "lists/$uNoPad.php");
+                copy("lists/userList.php", "lists/$uNoPad.php");
 
                 echo '<div style="margin-left: 20px; margin-right: 20px; text-align: center; border-top: 1px solid rebeccapurple; border-bottom: 1px solid rebeccapurple; padding: 10px; background-color: lavender">Account erfolgreich erstellt</div>';
+                header("Refresh:0; url=home.php");
               } else {
                 echo '<div style="margin-left: 20px; margin-right: 20px; text-align: center; border-top: 1px solid darkred; border-bottom: 1px solid darkred; padding: 10px; background-color: mistyrose">Fehler beim Erstellen des Accounts</div>';
               }

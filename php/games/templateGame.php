@@ -3,7 +3,7 @@ $connection = null;
 include "../connection.php";
 $galleryLimit = 10;
 
-$stmt = $connection->query("SELECT title, imgCover, synTitle, orgTitle, orgPlatform, releaseDate, refSeries, metaScore, synopsis, refPrequel, refSequel, refRemake FROM game WHERE gNo = $gameNumber");
+$stmt = $connection->query("SELECT title, imgCover, synTitle, orgTitle, orgPlatform, releaseDate, refSeries, metaScore, synopsis, refPrequel, refSequel, refRemake, pagePath FROM game WHERE gNo = $gameNumber");
 while ($rows = $stmt->fetch()) {
   $title = $rows[0];
   $imgCover = $rows[1];
@@ -62,6 +62,8 @@ while ($rows = $stmt->fetch()) {
     }
   }
 
+  $pagePath = $rows[12];
+
   $stmt = $connection->query("SELECT title, pagePath FROM game WHERE refRemake = $gameNumber");
   while ($nRows = $stmt->fetch()) {
     $origin = $nRows[0];
@@ -80,16 +82,8 @@ while ($rows = $stmt->fetch()) {
 <body>
 
 <div class="container">
-  <!--  Header  -->
-  <div class="logo">
-    <a href="../home.php">
-      <img src="../../img/logo.png" width="393">
-    </a>
-  </div>
-  <!--  Header End  -->
-
   <!--  Hotbar  -->
-  <?php include "gamePageHotbar.html" ?>
+  <?php include "gamePageHotbar.php" ?>
 
   <p class="titlebar">
     <?php echo "$title" ?>
@@ -301,21 +295,79 @@ while ($rows = $stmt->fetch()) {
           <h4>Ranking</h4>
           <h3># <?php echo "$rank" ?></h3>
         </div>
+        <div class="userScoreBox">
+          <h4>Nutzerbewertung</h4>
+          <?php
+          $stmt = $connection->query("SELECT AVG(score) FROM list WHERE refGame = $gameNumber");
+          while ($scoreRows = $stmt->fetch()) {
+            $userScore = number_format($scoreRows[0], 1, ',');
+            echo "<h3>$userScore</h3>";
+          }
+          ?>
+        </div>
       </div>
+
+      <?php
+      if ($userId) {
+        echo "
       <div class='listAddBox'>
         <div class='addBox'>
-          <?php
-          if (true){
-
-          };
-          ?>
-
-          <button name='listAdd'>kek +</button>
+          <form action='$pagePath' method='post'>
+      ";
+        $stmt = $connection->query("SELECT refGame FROM list WHERE refGame = $gameNumber AND refUser = $userId");
+        while ($checkGameRow = $stmt->fetch()) {
+          $checkGame = $checkGameRow[0];
+        }
+        if (!$checkGame) {
+          echo "
+      <button name='listAdd' style='background-color: rebeccapurple; color: white'>Zu Liste hinzufügen</button>
+      ";
+        } else {
+          echo "
+      <button name='listRemove' style='background-color: lavender'>Von Liste entfernen</button>
+      </form>
+      ";
+        }
+        if (isset($_POST['listAdd'])) {
+          $stmt = $connection->query("INSERT INTO list (refUser, refGame, refStatus) VALUES ('$userId', '$gameNumber', 2)");
+          echo("<meta http-equiv='refresh' content='0'>");
+        } elseif (isset($_POST['listRemove'])) {
+          $stmt = $connection->query("DELETE FROM list WHERE refGame = $gameNumber AND refUser = $userId");
+          echo("<meta http-equiv='refresh' content='0'>");
+        }
+        echo "
         </div>
         <div class='scoreSelectBox'>
-          kek
-        </div>
-      </div>
+        ";
+
+        if ($checkGame) {
+          echo "
+            <div class='scoreSelectDropdown'>
+                <div class='scoreSelectDropdown-a'><span style='margin: 5px'><div style='display: inline-block; color: yellow'>★</div><div style='display: inline-block; margin-left: 5px'>Score</div><div style='display: inline-block; margin-left: 65px'>▼</div></span></div>
+                <input type='checkbox'>
+                <div class='scoreSelectDropdown-c'>
+                    <ul>
+                        <li>
+                        <span>Score</span><input type='checkbox'><br>
+                        <span>10 - </span><input type='checkbox'>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          ";
+        }
+        echo "
+          </div>
+          ";
+
+
+
+      echo "</div>";
+      }
+
+      ?>
+
+
       <div class='synopsisBox'>
         <h4>Zusammenfassung:</h4>
         <ul style="list-style-type: none; text-align: justify; padding: 0 60px 20px 20px;">

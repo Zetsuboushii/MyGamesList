@@ -56,7 +56,7 @@
   display: table;
   margin: 10px;
   padding: 0;
-  width: 400px;
+  width: 600px;
   height: 100px;
   float: left;
   border-style: solid;
@@ -67,6 +67,7 @@
 
 .scoreBox h4 {
   margin: 0;
+  margin-top: 2px;
   padding: 0;
 }
 
@@ -111,6 +112,11 @@
   font-size: 26px;
 }
 
+.userScoreBox h3 {
+  line-height: 15px;
+  font-size: 26px;
+}
+
 .listAddBox {
   display: table;
   margin: 10px;
@@ -134,8 +140,17 @@
   height: 25px;
 }
 
-.addBox addButton {
+.addBox button {
+  margin-top: 15px;
+  border: 1px solid rebeccapurple;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 24px;
+}
 
+.addBox button:hover {
+  border: 1px solid #333333;
+  color: #333333;
 }
 
 .scoreSelectBox {
@@ -146,6 +161,90 @@
   width: 200px;
   height: 25px;
 }
+
+.scoreSelectDropdown {
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+}
+
+.scoreSelectDropdown-a {
+  padding: 2px;
+  background: white;
+  position: relative;
+  width: 150px;
+  border: 1px solid rebeccapurple;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.scoreSelectDropdown input:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition-duration: 0ms;
+}
+
+.scoreSelectDropdown input {
+  top: 0;
+  opacity: 0;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.scoreSelectDropdown input:hover {
+  cursor: pointer;
+}
+
+.scoreSelectDropdown input:checked:after {
+  transform: scaleX(1);
+}
+
+.scoreSelectDropdown input:checked ~ .scoreSelectDropdown-c {
+  transform: scaleY(1);
+}
+
+.scoreSelectDropdown-c {
+  display: block;
+  position: absolute;
+  background: white;
+  height: auto;
+  transform: scaleY(0);
+  transform-origin: top left;
+  transition-duration: 0ms;
+}
+
+.scoreSelectDropdown-c ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.scoreSelectDropdown-c li {
+  text-align: left;
+  display: block;
+  position: relative;
+  border: 1px solid rebeccapurple;
+  width: 154px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px #333333;
+}
+
+.scoreSelectDropdown-c span:hover {
+  background-color: #aaaaaa;
+}
+
 
 .synopsisBox {
   margin: 5px;

@@ -32,9 +32,9 @@
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Hilfe</a>
     <dif class="dropdown-content">
-      <a class="dropdown" href="#">Über</a>
-      <a class="dropdown" href="#">FAQ</a>
-      <a class="dropdown" href="#">Impressum</a>
+      <a class="dropdown" href="about.php">Über</a>
+      <a class="dropdown" href="faq.php">FAQ</a>
+      <a class="dropdown" href="impressum.php">Impressum</a>
     </dif>
   </li>
 
