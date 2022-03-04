@@ -33,7 +33,7 @@ $galleryLimit = 10;
   <div class="content_box">
     <?php
     echo "
-    <div class='mainbox' style='width: 700px; height: 733px'>
+    <div class='mainbox' style='width: 700px; height: 1000px'>
 
       <h4>Vorschläge</h4>
       <ul class='gallery'>

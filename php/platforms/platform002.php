@@ -1,5 +1,5 @@
 <?php
-$platNumber = 1;
+$platNumber = 2;
 
 include "templatePlatform.php";
 ?>

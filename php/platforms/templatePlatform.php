@@ -8,7 +8,9 @@ while ($rows = $stmt->fetch()) {
   $name = $rows[0];
 
   $aliasRaw = $rows[1];
-  $alias = explode("^", $aliasRaw);
+  if ($alias) {
+    $alias = explode("^", $aliasRaw);
+  }
 
   $releaseDateRaw = $rows[2];
   $releaseDate = explode("-", $releaseDateRaw);
@@ -32,17 +34,21 @@ while ($rows = $stmt->fetch()) {
   }
 
   $predecessorNo = $rows[6];
-  $stmt = $connection->query("SELECT name, pagePath FROM platform WHERE pNo = $predecessorNo");
-  while ($iRows = $stmt->fetch()) {
-    $predecessor = $iRows[0];
-    $predecessorPath = $iRows[1];
+  if ($predecessorNo) {
+    $stmt = $connection->query("SELECT name, pagePath FROM platform WHERE pNo = $predecessorNo");
+    while ($iRows = $stmt->fetch()) {
+      $predecessor = $iRows[0];
+      $predecessorPath = $iRows[1];
+    }
   }
 
   $successorNo = $rows[7];
-  $stmt = $connection->query("SELECT name, pagePath FROM platform WHERE pNo = $successorNo");
-  while ($iRows = $stmt->fetch()) {
-    $successor = $iRows[0];
-    $successorPath = $iRows[1];
+  if ($successorNo) {
+    $stmt = $connection->query("SELECT name, pagePath FROM platform WHERE pNo = $successorNo");
+    while ($iRows = $stmt->fetch()) {
+      $successor = $iRows[0];
+      $successorPath = $iRows[1];
+    }
   }
 
   $media = $rows[8];
@@ -66,14 +72,6 @@ while ($rows = $stmt->fetch()) {
 <body>
 
 <div class="container">
-  <!--  Header  -->
-  <div class="logo">
-    <a href="../home.php">
-      <img src="../../img/logo.png" width="393">
-    </a>
-  </div>
-  <!--  Header End  -->
-
   <!--  Hotbar  -->
   <?php include "platformPageHotbar.php" ?>
 
@@ -204,12 +202,12 @@ while ($rows = $stmt->fetch()) {
           <table style='text-align: left; margin-left: 20px'>";
           if ($predecessor) {
             echo "
-            <tr><th>Vorgängerkonsole:</th><th style='font-weight: normal'><a href='../games/$predecessorPath'>$predecessor</a></th></tr>
+            <tr><th>Vorgängerkonsole:</th><th style='font-weight: normal'><a href='../platforms/$predecessorPath'>$predecessor</a></th></tr>
             ";
           }
           if ($successor) {
             echo "
-            <tr><th>Nachfolgekonsole:</th><th style='font-weight: normal'><a href='../games/$successorPath'>$successor</a></th></tr>
+            <tr><th>Nachfolgekonsole:</th><th style='font-weight: normal'><a href='../platforms/$successorPath'>$successor</a></th></tr>
             ";
           }
           echo "</table>";
