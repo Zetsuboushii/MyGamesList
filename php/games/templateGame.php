@@ -3,7 +3,7 @@ $connection = null;
 include "../connection.php";
 $galleryLimit = 10;
 
-$stmt = $connection->query("SELECT title, imgCover, synTitle, orgTitle, orgPlatform, releaseDate, refSeries, metaScore, synopsis, refPrequel, refSequel, refRemake, pagePath FROM game WHERE gNo = $gameNumber");
+$stmt = $connection->query("SELECT title, imgCover, synTitle, orgTitle, orgPlatform, releaseDate, refSeries, metaScore, synopsis, pagePath FROM game WHERE gNo = $gameNumber");
 while ($rows = $stmt->fetch()) {
   $title = $rows[0];
   $imgCover = $rows[1];
@@ -35,41 +35,39 @@ while ($rows = $stmt->fetch()) {
   $metaScore = $rows[7];
   $synopsis = $rows[8];
 
-  $prequelNo = $rows[9];
-  if ($prequelNo) {
-    $stmt = $connection->query("SELECT title, pagePath FROM game WHERE gNo = $prequelNo");
-    while ($lRows = $stmt->fetch()) {
-      $prequel = $lRows[0];
-      $prequelPath = $lRows[1];
-    }
-  }
-
-  $sequelNo = $rows[10];
-  if ($sequelNo) {
-    $stmt = $connection->query("SELECT title, pagePath FROM game WHERE gNo = $sequelNo");
-    while ($mRows = $stmt->fetch()) {
-      $sequel = $mRows[0];
-      $sequelPath = $mRows[1];
-    }
-  }
-
-  $remakeNo = $rows[11];
-  if ($remakeNo) {
-    $stmt = $connection->query("SELECT title, pagePath FROM game WHERE gNo = $remakeNo");
-    while ($nRows = $stmt->fetch()) {
-      $remake = $nRows[0];
-      $remakePath = $nRows[1];
-    }
-  }
-
-  $pagePath = $rows[12];
-
-  $stmt = $connection->query("SELECT title, pagePath FROM game WHERE refRemake = $gameNumber");
-  while ($nRows = $stmt->fetch()) {
-    $origin = $nRows[0];
-    $originPath = $nRows[1];
-  }
+  $pagePath = $rows[9];
 }
+
+$stmt = $connection->query("SELECT refPrequel FROM prequel WHERE refOrigin = $gameNumber");
+while ($rows = $stmt->fetch()) {
+  $checkPrequel = $rows[0];
+}
+
+$stmt = $connection->query("SELECT refOrigin FROM prequel WHERE refPrequel = $gameNumber");
+while ($rows = $stmt->fetch()) {
+  $checkSequel = $rows[0];
+}
+
+$stmt = $connection->query("SELECT refRemake FROM remake WHERE refOrigin = $gameNumber");
+while ($rows = $stmt->fetch()) {
+  $checkRemake = $rows[0];
+}
+
+$stmt = $connection->query("SELECT refRemaster FROM remaster WHERE refOrigin = $gameNumber");
+while ($rows = $stmt->fetch()) {
+  $checkRemaster = $rows[0];
+}
+
+$stmt = $connection->query("SELECT refOrigin FROM remake WHERE refRemake = $gameNumber");
+while ($rows = $stmt->fetch()) {
+  $checkRemakeOrigin = $rows[0];
+}
+
+$stmt = $connection->query("SELECT refOrigin FROM remaster WHERE refRemaster = $gameNumber");
+while ($rows = $stmt->fetch()) {
+  $checkRemasterOrigin = $rows[0];
+}
+
 ?>
 
 <html lang='de'>
@@ -403,28 +401,73 @@ while ($rows = $stmt->fetch()) {
         </ul>
 
         <?php
-        if ($prequel || $sequel || $remake || $origin) {
+        if ($checkPrequel || $checkSequel || $checkRemake || $checkRemaster || $checkRemakeOrigin || $checkRemasterOrigin) {
           echo "
           <h4>Verwandte Titel:</h4>
           <table style='text-align: left; margin-left: 20px'>";
-          if ($prequel) {
+          if ($checkPrequel) {
             echo "
-            <tr><th>Prequel:</th><th style='font-weight: normal'><a href='../games/$prequelPath'>$prequel</a></th></tr>
+                <tr><th>Prequel(s):</th><th style='font-weight: normal'> <table>";
+            $stmt = $connection->query("SELECT p.refPrequel, g.title, g.pagePath FROM prequel p, game g WHERE p.refOrigin = $gameNumber AND g.gNo = p.refPrequel");
+            while ($rows = $stmt->fetch()) {
+              echo "
+              <tr><th style='font-weight: normal'><a href='../games/$rows[2]'>$rows[1]</a></th></tr>
+              ";
+            }
+            echo "
+              </table></th></tr>
             ";
           }
-          if ($sequel) {
+          if ($checkSequel) {
             echo "
-            <tr><th>Sequel:</th><th style='font-weight: normal'><a href='../games/$sequelPath'>$sequel</a></th></tr>
+                <tr><th>Sequel(s):</th><th style='font-weight: normal'> <table>";
+            $stmt = $connection->query("SELECT p.refOrigin, g.title, g.pagePath FROM prequel p, game g WHERE p.refPrequel = $gameNumber AND g.gNo = p.refOrigin");
+            while ($rows = $stmt->fetch()) {
+              echo "
+              <tr><th style='font-weight: normal'><a href='../games/$rows[2]'>$rows[1]</a></th></tr>
+              ";
+            }
+            echo "
+              </table></th></tr>
             ";
           }
-          if ($remake) {
+          if ($checkRemake) {
             echo "
-            <tr><th>Remake:</th><th style='font-weight: normal'><a href='../games/$remakePath'>$remake</a></th></tr>
+                <tr><th>Remakes(s):</th><th style='font-weight: normal'> <table>";
+            $stmt = $connection->query("SELECT r.refRemake, g.title, g.pagePath FROM remake r, game g WHERE r.refOrigin = $gameNumber AND g.gNo = r.refRemake");
+            while ($rows = $stmt->fetch()) {
+              echo "
+              <tr><th style='font-weight: normal'><a href='../games/$rows[2]'>$rows[1]</a></th></tr>
+              ";
+            }
+            echo "
+              </table></th></tr>
             ";
           }
-          if ($origin) {
+          if ($checkRemaster) {
             echo "
-            <tr><th>Ursprünglicher Titel:</th><th style='font-weight: normal'><a href='../games/$originPath'>$origin</a></th></tr>
+                <tr><th>Remaster(s):</th><th style='font-weight: normal'> <table>";
+            $stmt = $connection->query("SELECT r.refRemaster, g.title, g.pagePath FROM remaster r, game g WHERE r.refOrigin = $gameNumber AND g.gNo = r.refRemaster");
+            while ($rows = $stmt->fetch()) {
+              echo "
+              <tr><th style='font-weight: normal'><a href='../games/$rows[2]'>$rows[1]</a></th></tr>
+              ";
+            }
+            echo "
+              </table></th></tr>
+            ";
+          }
+          if ($checkRemakeOrigin) {
+            echo "
+                <tr><th>Ursprüngliche(r) Titel:</th><th style='font-weight: normal'> <table>";
+            $stmt = $connection->query("SELECT r.refOrigin, g.title, g.pagePath FROM remake r, game g WHERE r.refRemake = $gameNumber AND g.gNo = r.refOrigin");
+            while ($rows = $stmt->fetch()) {
+              echo "
+              <tr><th style='font-weight: normal'><a href='../games/$rows[2]'>$rows[1]</a></th></tr>
+              ";
+            }
+            echo "
+              </table></th></tr>
             ";
           }
           echo "</table>";

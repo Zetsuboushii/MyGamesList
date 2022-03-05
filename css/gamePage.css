@@ -211,3 +211,8 @@
 .synopsisBox a:hover {
   text-decoration: underline;
 }
+
+.synopsisBox table {
+  text-align: left;
+  vertical-align: top;
+}
