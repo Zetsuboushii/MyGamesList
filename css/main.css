@@ -350,3 +350,7 @@ form.searchbar::after {
 .loginBox button:hover {
   cursor: pointer;
 }
+
+.faq ul{
+  list-style-type: symbols("A:");
+}

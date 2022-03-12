@@ -38,7 +38,7 @@ $galleryLimit = 10;
     <?php
     if ($_POST["search"] || $_POST["submit"] || $_POST["hotbarSearch"] || $_POST["hotbarSubmit"]) {
       echo "
-            <div class='mainbox' style='width: 1070px; height: 800px'>
+            <div class='mainbox' style='width: 1070px; height: 800px; overflow-x: hidden'>
             <h4>Suchergebnisse</h4>
                 <ul class='search-results'>
           ";
