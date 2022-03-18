@@ -9,5 +9,5 @@ try {
 $userId = $_SESSION['userid'];
 $userName = $_SESSION['username'];
 $userPassword = $_SESSION['userpassword'];
-$userIdPad = $_SESSION['useridpadded']
+$userIdPad = $_SESSION['useridpadded'];
 ?>

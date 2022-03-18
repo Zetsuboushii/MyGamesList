@@ -371,9 +371,9 @@ while ($rows = $stmt->fetch()) {
                 <select id='status' name='status'>
                     <option value='2'>Am Spielen</option>
                     <option value='3'>Abgeschlossen</option>
-                    <option value='4' selected>Nicht fortgesetzt</option>
+                    <option value='4'>Nicht fortgesetzt</option>
                     <option value='5'>Abgebrochen</option>
-                    <option value='6'>Geplant</option>
+                    <option value='6' selected>Geplant</option>
                 </select>
                 <input type='submit' style='width: auto' value='✓'>
             </form>
@@ -407,7 +407,7 @@ while ($rows = $stmt->fetch()) {
           <table style='text-align: left; margin-left: 20px'>";
           if ($checkPrequel) {
             echo "
-                <tr><th>Prequel(s):</th><th style='font-weight: normal'> <table>";
+                <tr><th style='padding: 4px'>Prequel(s):</th><th style='font-weight: normal'> <table>";
             $stmt = $connection->query("SELECT p.refPrequel, g.title, g.pagePath FROM prequel p, game g WHERE p.refOrigin = $gameNumber AND g.gNo = p.refPrequel");
             while ($rows = $stmt->fetch()) {
               echo "
@@ -420,7 +420,7 @@ while ($rows = $stmt->fetch()) {
           }
           if ($checkSequel) {
             echo "
-                <tr><th>Sequel(s):</th><th style='font-weight: normal'> <table>";
+                <tr><th style='padding: 4px'>Sequel(s):</th><th style='font-weight: normal'> <table>";
             $stmt = $connection->query("SELECT p.refOrigin, g.title, g.pagePath FROM prequel p, game g WHERE p.refPrequel = $gameNumber AND g.gNo = p.refOrigin");
             while ($rows = $stmt->fetch()) {
               echo "
@@ -433,7 +433,7 @@ while ($rows = $stmt->fetch()) {
           }
           if ($checkRemake) {
             echo "
-                <tr><th>Remakes(s):</th><th style='font-weight: normal'> <table>";
+                <tr><th style='padding: 4px'>Remakes(s):</th><th style='font-weight: normal'> <table>";
             $stmt = $connection->query("SELECT r.refRemake, g.title, g.pagePath FROM remake r, game g WHERE r.refOrigin = $gameNumber AND g.gNo = r.refRemake");
             while ($rows = $stmt->fetch()) {
               echo "
@@ -446,7 +446,7 @@ while ($rows = $stmt->fetch()) {
           }
           if ($checkRemaster) {
             echo "
-                <tr><th>Remaster(s):</th><th style='font-weight: normal'> <table>";
+                <tr><th style='padding: 4px'>Remaster(s):</th><th style='font-weight: normal'> <table>";
             $stmt = $connection->query("SELECT r.refRemaster, g.title, g.pagePath FROM remaster r, game g WHERE r.refOrigin = $gameNumber AND g.gNo = r.refRemaster");
             while ($rows = $stmt->fetch()) {
               echo "
@@ -459,8 +459,21 @@ while ($rows = $stmt->fetch()) {
           }
           if ($checkRemakeOrigin) {
             echo "
-                <tr><th>Ursprüngliche(r) Titel:</th><th style='font-weight: normal'> <table>";
+                <tr><th style='padding: 4px'>Ursprüngliche(r) Titel:</th><th style='font-weight: normal'> <table>";
             $stmt = $connection->query("SELECT r.refOrigin, g.title, g.pagePath FROM remake r, game g WHERE r.refRemake = $gameNumber AND g.gNo = r.refOrigin");
+            while ($rows = $stmt->fetch()) {
+              echo "
+              <tr><th style='font-weight: normal'><a href='../games/$rows[2]'>$rows[1]</a></th></tr>
+              ";
+            }
+            echo "
+              </table></th></tr>
+            ";
+          }
+          if ($checkRemasterOrigin) {
+            echo "
+                <tr><th style='padding: 4px'>Ursprüngliche(r) Titel:</th><th style='font-weight: normal'> <table>";
+            $stmt = $connection->query("SELECT r.refOrigin, g.title, g.pagePath FROM remaster r, game g WHERE r.refRemaster = $gameNumber AND g.gNo = r.refOrigin");
             while ($rows = $stmt->fetch()) {
               echo "
               <tr><th style='font-weight: normal'><a href='../games/$rows[2]'>$rows[1]</a></th></tr>

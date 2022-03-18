@@ -46,10 +46,7 @@
   width: 760px;
   height: auto;
   float: left;
-  border-style: solid;
-  border-color: #aaaaaa;
-  border-width: 1px;
-  border-top: none;
+  border: none;
 }
 
 .scoreBox {
@@ -195,7 +192,7 @@
   margin: 5px;
   float: left;
   padding: 0;
-  border: 1px solid gray;
+  border: none;
   width: 750px;
 }
 
@@ -214,5 +211,9 @@
 
 .synopsisBox table {
   text-align: left;
+  vertical-align: top;
+}
+
+.synopsisBox th {
   vertical-align: top;
 }

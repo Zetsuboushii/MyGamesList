@@ -49,9 +49,9 @@ $galleryLimit = 10;
             <img alt='$title' src='$image'>
           </a>
           <a href='./games/$pagePath'>
-            <p class='desc'>
-              $title
-            </p>
+            <div class='desc'>
+                <p style='max-width: 180px'>$title</p>
+            </div>
           </a>
         </li>
         ";
@@ -71,17 +71,17 @@ $galleryLimit = 10;
       }
       $pagePath = $rows[2];
       echo "
-            <li>
-                <a target='_blank' href='./games/$pagePath'>
-                    <img alt='$title' src='$image'>
-                </a>
-                <a href='./games/$pagePath'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            </li>
-            ";
+        <li>
+          <a target='_blank' href='./games/$pagePath'>
+            <img alt='$title' src='$image'>
+          </a>
+          <a href='./games/$pagePath'>
+            <div class='desc'>
+                <p style='max-width: 180px'>$title</p>
+            </div>
+          </a>
+        </li>
+        ";
     }
     echo "
     </ul>
@@ -99,17 +99,17 @@ $galleryLimit = 10;
       }
       $pagePath = $rows[2];
       echo "
-            <li>
-                <a target='_blank' href='./games/$pagePath'>
-                    <img alt='$title' src='$image'>
-                </a>
-                <a href='./games/$pagePath'>
-                    <p class='desc'>
-                        $title
-                    </p>
-                </a>
-            </li>
-            ";
+        <li>
+          <a target='_blank' href='./games/$pagePath'>
+            <img alt='$title' src='$image'>
+          </a>
+          <a href='./games/$pagePath'>
+            <div class='desc'>
+                <p style='max-width: 180px'>$title</p>
+            </div>
+          </a>
+        </li>
+        ";
     }
     echo "
     </ul>

@@ -206,7 +206,8 @@ form.searchbar::after {
 
 .gallery li img {
   alignment: center;
-  width: 180px;
+  max-width: 230px;
+  max-height: 295px;
   border: solid gray 1px;
 }
 
@@ -215,6 +216,7 @@ form.searchbar::after {
   color: white;
   font-size: 12px;
   text-align: left;
+  vertical-align: text-bottom;
   position: relative;
   top: -53px;
   left: 1px;
@@ -225,7 +227,7 @@ form.searchbar::after {
   bottom: 0;
   z-index: 2;
   display: block;
-  max-width: 180px;
+  max-width: 230px;
   text-shadow: rgba(0,0,0,.8) 1px 1px 0;
   line-height: 1.3em;
 }
