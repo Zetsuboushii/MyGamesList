@@ -90,30 +90,30 @@ while ($rows = $stmt->fetch()) {
       </div>
 
       <div>
-        <h4>Andere Namen:</h4>
-        <ul>
-          <!--Synonyms-->
-          <?php
-          if ($alias) {
+        <?php
+        if ($alias) {
+        echo "
+            <h4>Andere Namen:</h4>
+            <ul>
+                <li>
+                Synonyme:
+                  <ul style='list-style-type: square'>
+                    ";
+              for ($i = 0; $i < count($alias); $i++) {
+                echo "
+                  <li>
+                    $alias[$i]
+                  </li>
+                  ";
+              }
             echo "
-            <li>
-            Synonyme:
-              <ul style='list-style-type: square'>
-                ";
-            for ($i = 0; $i < count($alias); $i++) {
-              echo "
-              <li>
-                $alias[$i]
-              </li>
-              ";
-            }
-            echo "
-              </ul>
-            </li>
+                    </ul>
+                </li>
+            </ul>
             ";
           }
           ?>
-        </ul>
+
 
         <h4>Weitere Informationen:</h4>
         <ul>
@@ -124,13 +124,14 @@ while ($rows = $stmt->fetch()) {
             </ul>
           </li>
           <li>
-            Konsolentyp:
+            Plattformtyp:
             <ul style="list-style-type: square">
               <li style="text-transform: capitalize"><?php echo "$consoleType" ?></li>
             </ul>
           </li>
+
           <li>
-            Hersteller:
+            Hersteller / Publisher:
             <ul style="list-style-type: square">
               <li style="text-transform: capitalize"><?php echo "$manufacturer" ?></li>
             </ul>
@@ -153,18 +154,31 @@ while ($rows = $stmt->fetch()) {
               <li style="text-transform: capitalize"><?php echo "$media" ?></li>
             </ul>
           </li>
-          <li>
+          <?php
+          if ($generation) {
+            echo "
+              <li>
             Generation:
-            <ul style="list-style-type: square">
-              <li style="text-transform: capitalize"><?php echo "$generation" ?>. Konsolengeneration</li>
+            <ul style='list-style-type: square'>
+              <li style='text-transform: capitalize'>$generation. Konsolengeneration</li>
             </ul>
           </li>
-          <li>
+            ";
+          }
+          ?>
+          <?php
+          if ($millUnitsSold) {
+            echo "
+            <li>
             Verkaufte Einheiten weltweit:
-            <ul style="list-style-type: square">
-              <li style="text-transform: capitalize"><?php echo "$millUnitsSold" ?> Millionen</li>
+            <ul style='list-style-type: square'>
+              <li style='text-transform: capitalize'>$millUnitsSold Millionen</li>
             </ul>
           </li>
+            ";
+          }
+          ?>
+
         </ul>
       </div>
 

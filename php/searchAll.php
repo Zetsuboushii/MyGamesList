@@ -78,7 +78,7 @@ $galleryLimit = 10;
               </div>
             </li>";
       }
-      $stmt = $connection->query("SELECT p.imgLogo, p.name, YEAR(p.releaseDate), pub.name, p.synopsis, p.pagePath FROM platform p, publisher pub WHERE p.manufacturer = pub.pubNo AND p.name LIKE '%$search%' OR p.manufacturer = pub.pubNo AND p.alias LIKE '%$search%'");
+      $stmt = $connection->query("SELECT p.imgLogo, p.name, YEAR(p.releaseDate), pub.name, p.synopsis, p.pagePath, p.imgPhoto FROM platform p, publisher pub WHERE p.manufacturer = pub.pubNo AND p.name LIKE '%$search%' OR p.manufacturer = pub.pubNo AND p.alias LIKE '%$search%'");
       while ($rows = $stmt->fetch()) {
         $image = $rows[0];
         $name = $rows[1];
@@ -86,18 +86,20 @@ $galleryLimit = 10;
         $manufacturer = $rows[3];
         $synopsis = $rows[4];
         $pagePath = $rows[5];
+        $imgPhoto = $rows[6];
         echo "
             <li>
-              <p>
-                <a target='_blank' href='./games/$pagePath'>
-                  <img alt='$name' src='$image' style='border: none'>
+              <p style='max-width: 150px'>
+                <a target='_blank' href='./platforms/$pagePath'>
+                  <img alt='$name Logo' src='$image' style='border: none'>
+                  <img alt='$name Foto' src='$imgPhoto' style='border: none'>
                 </a>
               </p>
               <div class='search-results-info'>
                 <h4>
-                  <a href='./games/$pagePath'>$name</a>
+                  <a href='./platforms/$pagePath'>$name</a>
                   |
-                  <a>$manufacturer</a>
+                  $manufacturer
                   |
                   $release
                 </h4>
