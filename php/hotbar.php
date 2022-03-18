@@ -1,6 +1,6 @@
 <div class="logo">
   <a href="home.php">
-    <img src="../img/logo.png" width="400px">
+    <img alt="MyGamesList Logo" src="../img/logo.png" width="400px">
   </a>
   <?php
   if (!$_SESSION['userid']) {
@@ -42,7 +42,7 @@
     <form class="searchbar" action="searchAll.php" method="post">
       <input name="hotbarSearch" type="text" placeholder="Suchen nach...">
       <button type="hotbarSubmit">
-        <img style="height: 20px; filter: saturate(0%) brightness(50%)" src="../icons/search_glass.png">
+        <img alt="Such-Icon" style="height: 20px; filter: saturate(0%) brightness(50%)" src="../icons/search_glass.png">
       </button>
     </form>
   </li>

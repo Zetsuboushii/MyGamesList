@@ -93,7 +93,7 @@ while ($rows = $stmt->fetch()) {
 
     <div class='leftbox'>
       <div style="width: 300px; height: auto; border-bottom: 1px solid gray">
-        <img src="../<?php echo "$imgCover" ?>">
+        <img alt="<?php echo "$title" ?>" src="../<?php echo "$imgCover" ?>">
       </div>
 
       <div>

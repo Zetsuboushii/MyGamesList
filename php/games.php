@@ -56,7 +56,7 @@ $galleryLimit = 10;
             <li>
               <p>
                 <a target='_blank' href='./games/$gPagePath'>
-                  <img src='$image'>
+                  <img alt='$title' src='$image'>
                 </a>
               </p>
               <div class='search-results-info'>
@@ -96,7 +96,7 @@ $galleryLimit = 10;
         echo "
                 <li>
                 <a target='_blank' href='./games/$pagePath'>
-                    <img src='$image'>
+                    <img alt='$title' src='$image'>
                 </a>
                 <a href='./games/$pagePath'>
                     <p class='desc'>

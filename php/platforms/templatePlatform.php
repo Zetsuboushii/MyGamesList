@@ -85,8 +85,8 @@ while ($rows = $stmt->fetch()) {
 
     <div class='leftbox'>
       <div style="width: 300px; height: auto; border-bottom: 1px solid gray">
-        <img src="../<?php echo "$imgLogo" ?>">
-        <img src="../<?php echo "$imgPhoto" ?>">
+        <img alt="<?php echo "$name Logo" ?>" src="../<?php echo "$imgLogo" ?>">
+        <img alt="<?php echo "$name Foto" ?>" src="../<?php echo "$imgPhoto" ?>">
       </div>
 
       <div>

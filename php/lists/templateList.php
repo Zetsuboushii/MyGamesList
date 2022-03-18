@@ -99,7 +99,7 @@ include "../connection.php";
             <tr>
                 <th><div $colorTag; height: 210px; width: 5px'></div></th>
                 <th>$i</th>
-                <th style='padding: 5px'><a href='../games/$rows[1]'><img src='../$rows[2]'></a></th>
+                <th style='padding: 5px'><a href='../games/$rows[1]'><img alt='$rows[0]' src='../$rows[2]'></a></th>
                 <th><a href='../games/$rows[1]'>$rows[0]</a></th>
                 <th>$rows[6]</th>
                 <th><a href='../platforms/$rows[5]'>$rows[4]</a></th>
@@ -125,7 +125,7 @@ include "../connection.php";
             <tr>
                 <th><div $colorTag; height: 210px; width: 5px'></div></th>
                 <th>$i</th>
-                <th style='padding: 5px'><a href='../games/$rows[1]'><img src='../$rows[2]'></a></th>
+                <th style='padding: 5px'><a href='../games/$rows[1]'><img alt='$rows[0]' src='../$rows[2]'></a></th>
                 <th><a href='../games/$rows[1]'>$rows[0]</a></th>
                 <th>$rows[6]</th>
                 <th><a href='../platforms/$rows[5]'>$rows[4]</a></th>
@@ -151,7 +151,7 @@ include "../connection.php";
             <tr>
                 <th><div $colorTag; height: 210px; width: 5px'></div></th>
                 <th>$i</th>
-                <th style='padding: 5px'><a href='../games/$rows[1]'><img src='../$rows[2]'></a></th>
+                <th style='padding: 5px'><a href='../games/$rows[1]'><img alt='$rows[0]' src='../$rows[2]'></a></th>
                 <th><a href='../games/$rows[1]'>$rows[0]</a></th>
                 <th>$rows[6]</th>
                 <th><a href='../platforms/$rows[5]'>$rows[4]</a></th>
@@ -177,7 +177,7 @@ include "../connection.php";
             <tr>
                 <th><div $colorTag; height: 210px; width: 5px'></div></th>
                 <th>$i</th>
-                <th style='padding: 5px'><a href='../games/$rows[1]'><img src='../$rows[2]'></a></th>
+                <th style='padding: 5px'><a href='../games/$rows[1]'><img alt='$rows[0]' src='../$rows[2]'></a></th>
                 <th><a href='../games/$rows[1]'>$rows[0]</a></th>
                 <th>$rows[6]</th>
                 <th><a href='../platforms/$rows[5]'>$rows[4]</a></th>
@@ -203,7 +203,7 @@ include "../connection.php";
             <tr>
                 <th><div $colorTag; height: 210px; width: 5px'></div></th>
                 <th>$i</th>
-                <th style='padding: 5px'><a href='../games/$rows[1]'><img src='../$rows[2]'></a></th>
+                <th style='padding: 5px'><a href='../games/$rows[1]'><img alt='$rows[0]'  src='../$rows[2]'></a></th>
                 <th><a href='../games/$rows[1]'>$rows[0]</a></th>
                 <th>$rows[6]</th>
                 <th><a href='../platforms/$rows[5]'>$rows[4]</a></th>
@@ -229,7 +229,7 @@ include "../connection.php";
             <tr>
                 <th><div $colorTag; height: 210px; width: 5px'></div></th>
                 <th>$i</th>
-                <th style='padding: 5px'><a href='../games/$rows[1]'><img src='../$rows[2]'></a></th>
+                <th style='padding: 5px'><a href='../games/$rows[1]'><img alt='$rows[0]' src='../$rows[2]'></a></th>
                 <th><a href='../games/$rows[1]'>$rows[0]</a></th>
                 <th>$rows[6]</th>
                 <th><a href='../platforms/$rows[5]'>$rows[4]</a></th>
@@ -256,7 +256,7 @@ include "../connection.php";
             <tr>
                 <th><div $colorTag; height: 210px; width: 5px'></div></th>
                 <th>$i</th>
-                <th style='padding: 5px'><a href='../games/$rows[1]'><img src='../$rows[2]'></a></th>
+                <th style='padding: 5px'><a href='../games/$rows[1]'><img alt='$rows[0]' src='../$rows[2]'></a></th>
                 <th><a href='../games/$rows[1]'>$rows[0]</a></th>
                 <th>$rows[6]</th>
                 <th><a href='../platforms/$rows[5]'>$rows[4]</a></th>

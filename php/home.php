@@ -17,10 +17,6 @@ $galleryLimit = 10;
 
 
 <div class="container">
-  <!--  Header  -->
-
-  <!--  Header End  -->
-
   <!--  Hotbar  -->
   <?php include "hotbar.php" ?>
 
@@ -50,7 +46,7 @@ $galleryLimit = 10;
       echo "
         <li>
           <a target='_blank' href='./games/$pagePath'>
-            <img src='$image'>
+            <img alt='$title' src='$image'>
           </a>
           <a href='./games/$pagePath'>
             <p class='desc'>
@@ -77,7 +73,7 @@ $galleryLimit = 10;
       echo "
             <li>
                 <a target='_blank' href='./games/$pagePath'>
-                    <img src='$image'>
+                    <img alt='$title' src='$image'>
                 </a>
                 <a href='./games/$pagePath'>
                     <p class='desc'>
@@ -105,7 +101,7 @@ $galleryLimit = 10;
       echo "
             <li>
                 <a target='_blank' href='./games/$pagePath'>
-                    <img src='$image'>
+                    <img alt='$title' src='$image'>
                 </a>
                 <a href='./games/$pagePath'>
                     <p class='desc'>
@@ -137,7 +133,7 @@ $galleryLimit = 10;
             echo "
                 <p>
                     <a href='./games/$gPagePath'>
-                        <img src='$image'>
+                        <img alt='$title' src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
@@ -164,7 +160,7 @@ $galleryLimit = 10;
             echo "
                 <p>
                     <a href='./games/$gPagePath'>
-                        <img src='$image'>
+                        <img alt='$title' src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
@@ -191,7 +187,7 @@ $galleryLimit = 10;
             echo "
                 <p>
                     <a href='./games/$gPagePath'>
-                        <img src='$image'>
+                        <img alt='$title' src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
@@ -224,7 +220,7 @@ $galleryLimit = 10;
             echo "
                 <p>
                     <a href='./games/$gPagePath'>
-                        <img src='$image'>
+                        <img alt='$title' src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
@@ -251,7 +247,7 @@ $galleryLimit = 10;
             echo "
                 <p>
                     <a href='./games/$gPagePath'>
-                        <img src='$image'>
+                        <img alt='$title' src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
@@ -278,7 +274,7 @@ $galleryLimit = 10;
             echo "
                 <p>
                     <a href='./games/$gPagePath'>
-                        <img src='$image'>
+                        <img alt='$title' src='$image'>
                     </a>
                 </p>
                 <div class='sidebox-info'>
