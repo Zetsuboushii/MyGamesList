@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 12. Mrz 2022 um 15:19
+-- Erstellungszeit: 18. Mrz 2022 um 14:57
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 8.1.2
 
@@ -39,7 +39,8 @@ CREATE TABLE `consoletype` (
 INSERT INTO `consoletype` (`ctNo`, `description`) VALUES
 (1, 'stationäre Heimkonsole'),
 (2, 'handheld Spielekonsole'),
-(3, 'hybride Spielekonsole');
+(3, 'hybride Spielekonsole'),
+(4, 'Internet-Videospiel-Vertriebsplattform');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,11 @@ INSERT INTO `developer` (`devNo`, `name`) VALUES
 (14, '1-UP Studio'),
 (15, 'Intelligent Systems'),
 (17, 'TOSE Software Co.'),
-(18, 'Good-Feel');
+(18, 'Good-Feel'),
+(19, 'Sony Computer Entertainment'),
+(20, 'Valve'),
+(21, 'Ubisoft'),
+(22, 'Microsoft');
 
 -- --------------------------------------------------------
 
@@ -808,32 +813,30 @@ CREATE TABLE `platform` (
 --
 
 INSERT INTO `platform` (`pNo`, `name`, `alias`, `consoleType`, `developer`, `generation`, `imgLogo`, `imgPhoto`, `manufacturer`, `media`, `millUnitsSold`, `predecessor`, `successor`, `releaseDate`, `synopsis`, `pagePath`) VALUES
-(1, 'Nintendo 64', 'N64', 1, 1, 5, '../img/platform_logos/platform001_logo.png', '../img/platform_photos/platform001_photo.jpg', 1, 'Nintendo 64 Game Pak', 32.93, 7, 3, '1996-06-23', 'Das[3] Nintendo 64 (Eigenschreibweise: NINTENDO64, offiziell abgekürzt als N64,[3] jap.: ニンテンドウ64, Hepburn: Nintendō Rokujūyon), benannt nach seinem 64-Bit-Hauptprozessor, ist die dritte weltweit veröffentlichte stationäre Spielkonsole von Nintendo. Sie ist der Nachfolger des Super Nintendo Entertainment System (SNES) und die erste Spielkonsole mit einer 64-Bit-Architektur. Veröffentlicht wurde sie erstmals am 23. Juni 1996 in Japan, am 29. September 1996 in Nordamerika und am 1. März 1997 in Europa. Als Spielkonsole konkurrierte sie hauptsächlich mit der PlayStation von Sony und dem Sega Saturn, konnte aber bezüglich der Verkaufszahlen jedoch nur die letztere Konsole schlagen.<br>In Deutschland kam die Konsole zu einem Preis von 399 Deutsche Mark auf den Markt, wurde jedoch nach acht Wochen auf 299 Deutsche Mark reduziert. Zum Verkaufsstart waren in Deutschland lediglich die beiden Launch-Titel Super Mario 64 und Pilotwings 64 erhältlich, wenige Wochen später folgten weitere Spiele.<br>Nintendo bewarb das Gerät zur Veröffentlichung als schnellstes Videospielsystem auf dem Markt. Besonders hervorgehoben wurde dabei die 64-Bit-Architektur des Prozessors, die Konkurrenzkonsolen PlayStation und Sega Saturn arbeiteten nur mit 32 Bit. Genutzt wurden der 64-Bit Modus in der Praxis jedoch kaum, da die Konsole nur 4 MB Arbeitsspeicher hatte (mit 32-Bit lassen sich 4 GB adressieren) und der Bus nicht breit genug war. Zudem wurde die für 3D-Grafik übliche Fließkommazahl mit 32-Bit dargestellt und Nebenwirkungen wie 8-Byte (statt 4-Byte) große Zeiger hätten die Programmierung erschwert. Der mit 93,75 MHz getaktete Prozessor konnte 125 Millionen Instruktionen pro Sekunde ausführen und war der PlayStation, die nur 30 MIPS verarbeiten konnte, überlegen.', 'platform001.php'),
+(1, 'Nintendo 64', 'N64', 1, 1, 5, '../img/platform_logos/platform001_logo.png', '../img/platform_photos/platform001_photo.jpg', 1, 'Nintendo 64 Game Pak', 32.93, 28, 3, '1996-06-23', 'Das[3] Nintendo 64 (Eigenschreibweise: NINTENDO64, offiziell abgekürzt als N64,[3] jap.: ニンテンドウ64, Hepburn: Nintendō Rokujūyon), benannt nach seinem 64-Bit-Hauptprozessor, ist die dritte weltweit veröffentlichte stationäre Spielkonsole von Nintendo. Sie ist der Nachfolger des Super Nintendo Entertainment System (SNES) und die erste Spielkonsole mit einer 64-Bit-Architektur. Veröffentlicht wurde sie erstmals am 23. Juni 1996 in Japan, am 29. September 1996 in Nordamerika und am 1. März 1997 in Europa. Als Spielkonsole konkurrierte sie hauptsächlich mit der PlayStation von Sony und dem Sega Saturn, konnte aber bezüglich der Verkaufszahlen jedoch nur die letztere Konsole schlagen.<br>In Deutschland kam die Konsole zu einem Preis von 399 Deutsche Mark auf den Markt, wurde jedoch nach acht Wochen auf 299 Deutsche Mark reduziert. Zum Verkaufsstart waren in Deutschland lediglich die beiden Launch-Titel Super Mario 64 und Pilotwings 64 erhältlich, wenige Wochen später folgten weitere Spiele.<br>Nintendo bewarb das Gerät zur Veröffentlichung als schnellstes Videospielsystem auf dem Markt. Besonders hervorgehoben wurde dabei die 64-Bit-Architektur des Prozessors, die Konkurrenzkonsolen PlayStation und Sega Saturn arbeiteten nur mit 32 Bit. Genutzt wurden der 64-Bit Modus in der Praxis jedoch kaum, da die Konsole nur 4 MB Arbeitsspeicher hatte (mit 32-Bit lassen sich 4 GB adressieren) und der Bus nicht breit genug war. Zudem wurde die für 3D-Grafik übliche Fließkommazahl mit 32-Bit dargestellt und Nebenwirkungen wie 8-Byte (statt 4-Byte) große Zeiger hätten die Programmierung erschwert. Der mit 93,75 MHz getaktete Prozessor konnte 125 Millionen Instruktionen pro Sekunde ausführen und war der PlayStation, die nur 30 MIPS verarbeiten konnte, überlegen.', 'platform001.php'),
 (2, 'Nintendo 3DS', NULL, 2, 2, 8, '../img/platform_logos/platform002_logo.png', '../img/platform_photos/platform002_photo.png', 1, 'Nintendo 3DS Game Card', 75.94, 4, NULL, '2011-02-26', 'Wie schon sein Vorgänger (der Nintendo DS) bietet der Nintendo 3DS zwei Bildschirme. Der obere Bildschirm auf der Innenseite des Deckels bietet ein autostereoskopisches 3D-Display der Firma Sharp mit einer Diagonale von 8,97 cm (3,53 Zoll), das ohne spezielle Brille genutzt werden kann. Die Auflösung des 3D-Displays beträgt insgesamt 2 × 400 × 240 px, d. h. 400 × 240 px für jedes Auge. Die Intensität der stereoskopischen Darstellung ist über einen Schieberegler stufenlos einstellbar bis abschaltbar. 3D-Darstellungen können auf Dauer auch über ein Passwort deaktiviert werden. Nintendo empfiehlt dies ausdrücklich Eltern, die Kinder im Alter von unter sechs Jahren mit dem Gerät spielen lassen, obgleich es keine Erkenntnisse zu etwaigen Langzeitschäden durch stereoskopische Projektionen gibt.[15] Der untere Bildschirm hingegen ist ein 7,62 cm (3 Zoll) großer, druckempfindlicher Touchscreen. Die Auflösung des Touchscreens beträgt 320 × 240 px.', 'platform002.php'),
 (3, 'Nintendo GameCube', 'NGC', 1, 1, 6, '../img/platform_logos/platform003_logo.png', '../img/platform_photos/platform003_photo.png', 1, 'GameCube Mini Game Disc', 21.75, 1, 5, '2001-09-14', 'Der Nintendo GameCube [\'geɪm \'kjuːb] (englisch für Spielwürfel, jap. ニンテンドー ゲームキューブ, Hepburn: Nintendō Gēmukyūbu, offiziell abgekürzt als GCN in Europa und Nordamerika und NGC in Japan, meist einfach nur GameCube oder kurz GC genannt) ist eine stationäre Spielkonsole des japanischen Konsolenherstellers und Videospielentwicklers Nintendo und Nachfolger des Nintendo 64. Er stand als Konsole in direkter Konkurrenz zu Segas Dreamcast, Sonys PlayStation 2 und Microsofts Xbox. Der Nintendo GameCube verkaufte sich weltweit etwa 21,74 Millionen Mal, bis der Verkauf im Jahre 2007 offiziell eingestellt wurde.[3] Nachfolger des Nintendo GameCube ist die im Jahr 2006 erschienene Wii, welche in ihrer ersten Ausführung abwärtskompatibel zu Nintendo-GameCube-Software und -Zubehör ist.', 'platform003.php'),
 (4, 'Nintendo DS', 'NDS', 2, 2, 7, '../img/platform_logos/platform004_logo.png', '../img/platform_photos/platform004_photo.png', 1, 'Nintendo DS Game Card', 154.02, 10, 2, '2004-11-21', 'Der Nintendo DS (kurz NDS oder DS) ist eine vom japanischen Spielkonsolenhersteller Nintendo entwickelte und produzierte Handheld-Konsole und inoffizieller Nachfolger des Game Boy Advance. Der Nintendo DS verfügt über zwei Bildschirme, von denen der untere ein druckempfindlicher Touchscreen ist, sowie ein eingebautes Mikrofon. Diese sollen gegenüber früheren Konsolen eine neuartige und vereinfachte Spielsteuerung ermöglichen. Der DS spielte eine entscheidende Rolle im Durchbruch des Touchscreens und etablierte diesen im Massenmarkt.', 'platform004.php'),
 (5, 'Nintendo Wii', NULL, 1, 1, 7, '../img/platform_logos/platform005_logo.png', '../img/platform_photos/platform005_photo.png', 1, 'Wii Optical Disc', 101.63, 3, 9, '2006-11-19', 'Die Wii [wiː] ist eine 2006 von dem japanischen Unternehmen Nintendo veröffentlichte stationäre Spielkonsole. Sie stellt den Nachfolger des Nintendo GameCube dar. Sie wurde erstmals in Nordamerika am 19. November 2006, dann in Japan am 2. Dezember 2006 und am 8. Dezember 2006 schließlich auch in Europa veröffentlicht. Während ihrer Lebenszeit stand sie in direkter Konkurrenz zu Sonys PlayStation 3 und Microsofts Xbox 360. Ihr wesentliches Merkmal ist der Controller, der einer herkömmlichen Fernbedienung ähnelt, allerdings über eingebaute Bewegungssensoren und Vibrationsmotoren verfügt. Diese registrieren die Lage und die Bewegungen des Controllers im Raum und setzen sie in entsprechende Bewegungen von Spielfiguren oder -elementen auf dem Bildschirm um.[3] Mussten die Nutzer bei herkömmlichen Spielsystemen Knöpfe des Controllers oder Analogsticks betätigen, so können sie die Spiele nun steuern, indem sie den Controller selbst bewegen. Das Spielsystem aus Hardware und Software misst die dreidimensionalen Bewegungen des Nutzers. Die Konsole wurde über 100 Millionen Mal verkauft[1] und ist damit eine der meistverkauften Spielkonsolen überhaupt. Der bewegungssensitive Controller der Wii sorgte aufgrund des großen Verkaufserfolgs der Konsole für einen deutlichen Verkaufsschub von bewegungsgesteuerten Spielen. Nintendos Konsole veranlasste Wettbewerber zur Veröffentlichung eigener bewegungssensitiver Hardware-Erweiterungen, Sonys PlayStation Move und Microsofts Kinect.[4] Sie etablierte Bewegungssteuerung als eine attraktive Option in der Videospielindustrie und beeinflusste die fortschreitende Entwicklung in diesem Bereich.[5] Außerdem ist sie für ihre charakteristische Musik der einzelnen Kanäle bekannt.', 'platform005.php'),
-(6, 'Nintendo Switch', NULL, 3, 3, 8, '../img/platform_logos/platform006_logo.png', '../img/platform_photos/platform006_photo.jpg', 1, 'Nintendo Switch Game Card', 103.54, 9, NULL, '2017-03-03', 'Die Nintendo Switch (auch nur Switch) ist eine Videospielkonsole des japanischen Unternehmens Nintendo. Sie erschien am 3. März 2017 in Europa, Australien, Nordamerika und Asien[4] sowie am 15. August 2017 in Argentinien.[5] Als sogenannte hybride Konsole lässt sich der Nachfolger der Wii U sowohl als stationäre, also mit einem externen Bildschirm verbundene Konsole nutzen, wie auch als tragbare Handheld-Konsole. Die Joy-Con genannten abnehmbaren Bedienelemente ermöglichen Spiele in einer dritten Variante, dem sogenannten Tisch-Modus. Die Nintendo Switch steht in direkter Konkurrenz zu Sonys PlayStation 4 und Microsofts Xbox One. Die Nintendo Switch ist die in Verkaufszahlen bislang erfolgreichste aller stationären Nintendo-Konsolen.', 'platform006.php'),
-(7, 'Super Nintendo Entertainment System', 'SNES^Super Famicom', 1, 2, 4, '../img/platform_logos/platform007_logo.png', '../img/platform_photos/platform007_photo.jpg', 1, 'SNES Game Pak', 49.1, 8, 1, '1990-11-21', 'Das Super Nintendo Entertainment System (meist abgekürzt als Super Nintendo, Super NES, Super-NES oder SNES; orig. jap. スーパーファミコン Sūpā Famikon bzw. Super Famicom, abgekürzt SFC) ist eine stationäre 16-Bit-Spielkonsole des japanischen Unternehmens Nintendo. Es ist die zweite weltweit veröffentlichte stationäre Spielkonsole des Unternehmens und sein Controller, der SNES-Controller, führte die Schultertasten ein, die fortan zum Standard aller nachfolgend erschienenen Gamepads wurden.[2][3][4] Veröffentlicht wurde das Super Nintendo Entertainment System erstmals am 21. November 1990 in Japan, dann am 23. August 1991 in Nordamerika[5] und am 11. April 1992 schließlich auch in Europa. In Deutschland war das System ab dem 15. August 1992 erhältlich. Das Super Nintendo Entertainment System ist der Vorgänger des Nintendo 64 (N64) und der Nachfolger des Nintendo Entertainment System (NES).', 'platform007.php'),
+(6, 'Nintendo Switch', 'NSw', 3, 3, 8, '../img/platform_logos/platform006_logo.png', '../img/platform_photos/platform006_photo.jpg', 1, 'Nintendo Switch Game Card', 103.54, 9, NULL, '2017-03-03', 'Die Nintendo Switch (auch nur Switch) ist eine Videospielkonsole des japanischen Unternehmens Nintendo. Sie erschien am 3. März 2017 in Europa, Australien, Nordamerika und Asien[4] sowie am 15. August 2017 in Argentinien.[5] Als sogenannte hybride Konsole lässt sich der Nachfolger der Wii U sowohl als stationäre, also mit einem externen Bildschirm verbundene Konsole nutzen, wie auch als tragbare Handheld-Konsole. Die Joy-Con genannten abnehmbaren Bedienelemente ermöglichen Spiele in einer dritten Variante, dem sogenannten Tisch-Modus. Die Nintendo Switch steht in direkter Konkurrenz zu Sonys PlayStation 4 und Microsofts Xbox One. Die Nintendo Switch ist die in Verkaufszahlen bislang erfolgreichste aller stationären Nintendo-Konsolen.', 'platform006.php'),
+(7, 'Super Nintendo Entertainment System', 'SNES^Super Famicom', 1, 2, 4, '../img/platform_logos/platform007_logo.png', '../img/platform_photos/platform007_photo.jpg', 1, 'SNES Game Pak', 49.1, 8, 28, '1990-11-21', 'Das Super Nintendo Entertainment System (meist abgekürzt als Super Nintendo, Super NES, Super-NES oder SNES; orig. jap. スーパーファミコン Sūpā Famikon bzw. Super Famicom, abgekürzt SFC) ist eine stationäre 16-Bit-Spielkonsole des japanischen Unternehmens Nintendo. Es ist die zweite weltweit veröffentlichte stationäre Spielkonsole des Unternehmens und sein Controller, der SNES-Controller, führte die Schultertasten ein, die fortan zum Standard aller nachfolgend erschienenen Gamepads wurden.[2][3][4] Veröffentlicht wurde das Super Nintendo Entertainment System erstmals am 21. November 1990 in Japan, dann am 23. August 1991 in Nordamerika[5] und am 11. April 1992 schließlich auch in Europa. In Deutschland war das System ab dem 15. August 1992 erhältlich. Das Super Nintendo Entertainment System ist der Vorgänger des Nintendo 64 (N64) und der Nachfolger des Nintendo Entertainment System (NES).', 'platform007.php'),
 (8, 'Nintendo Entertainment System', 'NES^Famicom', 1, 2, 3, '../img/platform_logos/platform008_logo.png', '../img/platform_photos/platform008_photo.jpg', 1, 'NES Game Pak', 61.91, NULL, 7, '1983-06-15', 'Das Nintendo Entertainment System (kurz meist NES genannt) ist eine stationäre 8-Bit-Spielkonsole des japanischen Spielkonsolenherstellers Nintendo. Die Konsole erschien in Nordamerika, Brasilien, Europa, Asien und Australien. Die japanische Version wurde als Famicom (kurz für Family Computer) vermarktet. Das NES war mit über 60 Millionen verkauften Einheiten lange Zeit die meistverkaufte Konsole überhaupt. Nach dem Zusammenbruch der Videospielebranche im Jahre 1983, dem sogenannten „Video Game Crash“, belebte Nintendo den Heimkonsolenmarkt mit ihrer Konsole neu. Der Controller führte das Steuerkreuz (kurz: D-Pad für Direction-Pad) ein und definierte die grundsätzliche Tastenanordnung der Gamepads. Bekannte Spieleserien wie Super Mario Bros., The Legend of Zelda, Metroid oder Castlevania gaben auf dem NES ihr Heimkonsolen-Debüt.', 'platform008.php'),
 (9, 'Nintendo Wii U', NULL, 1, 1, 8, '../img/platform_logos/platform009_logo.png', '../img/platform_photos/platform009_photo.png', 1, 'Wii U Optical Disc', 13.56, 5, 6, '2012-11-18', 'Die Wii U ist eine stationäre Spielkonsole des japanischen Unternehmens Nintendo. Sie stellt den Nachfolger der Wii dar und ist Nintendos sechste weltweit veröffentlichte Heimkonsole. In Nordamerika erschien sie am 18. November 2012, in Europa am 30. November 2012 und in Japan am 8. Dezember 2012. Die Wii U steht in direkter Konkurrenz zu Sonys PlayStation 4 und Microsofts Xbox One. Anfang 2017 stellte Nintendo die Produktion der Konsole ein. Der Nachfolger der Wii U ist die Nintendo Switch.', 'platform009.php'),
 (10, 'Game Boy Advance', 'GBA', 2, 1, 6, '../img/platform_logos/platform010_logo.png', '../img/platform_photos/platform010_photo.jpg', 1, 'GBA Game Pak', 81.51, 11, 4, '2001-03-21', 'Der Game Boy Advance (kurz GBA) ist eine Handheld-Konsole und der Nachfolger des Game Boy bzw. des Game Boy Color. Es ist Nintendos erster Handheld, der nicht auf der Technik des ursprünglichen Game Boy basiert (mit Ausnahme der Game & Watch-Serie). Der Game Boy Advance hat mit dem Game Boy Advance SP eine Überarbeitung erfahren. Trotz der grundlegenden Änderung der Hardware können die beiden Vertreter der neuesten Game-Boy-Generation alle Game-Boy-Spiele verarbeiten. Alle Game-Boy-Advance-Modelle gibt es auch in vielen verschiedenen Farben.<br>Der Game Boy Advance verkaufte sich in seiner gesamten Lebensspanne etwa 81,51 Millionen Mal.', 'platform010.php'),
 (11, 'Game Boy Color', 'GBC', 2, 2, 5, '../img/platform_logos/platform011_logo.png', '../img/platform_photos/platform011_photo.png', 1, 'GBC Game Pak', 118.69, 12, 10, '1998-10-21', 'Der Game Boy Color erschien 1998 als indirekter Nachfolger des Game Boy sowie des Game Boy Pocket. Er basiert technisch auf der ersten Game-Boy-Linie (Z80-Generation). Der Game Boy Color besaß als erste tragbare Nintendo-Spielkonsole einen Farbbildschirm und konnte aus einer Palette von 32.768 Farben 56 gleichzeitig darstellen. Die Vorgänger hatten noch eine Anzeige mit vier Grautönen. Diese konvertiert der Game Boy Color in eine wählbare Vierfarbpalette, weswegen der Game Boy Color auch mit allen Game-Boy-Spielen ohne Farbe kompatibel ist; diese Technik wird zur Farberzeugung bis zum Game Boy Advance angewandt.', 'platform011.php'),
 (12, 'Game Boy', 'GB', 2, 2, 4, '../img/platform_logos/platform012_logo.png', '../img/platform_photos/platform012_photo.jpg', 1, 'GB Game Pak', 118.69, NULL, 11, '1989-04-21', 'Der Game Boy (jap. ゲームボーイ, Hepburn: Gēmu Bōi) ist eine 8-Bit-Handheld-Konsole, die von Gunpei Yokoi entwickelt und von Nintendo erstmals am 21. April 1989 in Japan zu einem Preis von 12500 Yen veröffentlicht wurde.[3] In Europa war die Konsole ab Herbst 1990 erhältlich und wurde in Deutschland zu einem Preis von 169 D-Mark verkauft.[4] Sie wurde 1989 erstmals der Öffentlichkeit vorgestellt. Der Game Boy ist mit mehr als 118,69 Millionen verkauften Exemplaren[1] (Game Boy Color miteinberechnet) eine der meistverkauften Spielkonsolen überhaupt und war lange Zeit die meistverkaufte Handheld-Konsole der Welt. Dieser Verkaufsrekord wurde allerdings vom Nintendo DS mit seinen rund 154,01 Millionen abgesetzten Geräten gebrochen.', 'platform012.php'),
-(13, 'Apple iOS', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 'Android', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 'PlayStation', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 'PlayStation 2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 'PlayStation 3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 'PlayStation 4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 'PlayStation 5', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 'Xbox', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 'Xbox 360', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 'Xbox One', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 'Xbox Series', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 'Steam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 'Ubisoft Connect', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(28, 'Virtual Boy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(17, 'PlayStation', 'PS1', 1, 19, 5, '../img/platform_logos/platform017_logo.png', '../img/platform_photos/platform017_photo.png', 4, 'CD-ROM', 102.49, NULL, 18, '1994-12-03', 'Die PlayStation (jap. プレイステーション, Pureisutēshon, offizielle Abkürzung: PS, Codename: PSX, auch PS1 genannt) ist eine stationäre Spielkonsole des japanischen Unternehmens Sony, die am 3. Dezember 1994[7][8][9] erstmals in Japan verkauft und deren Herstellung nach zwölf Jahren Verkaufszeitraum, im Jahr 2006, endgültig eingestellt wurde.[8] Die PlayStation ist die erste Spielkonsole der PlayStation-Marke. Mit Ken Kutaragi als Vorsitzendem der eigens dafür gegründeten Tochtergesellschaft Sony Computer Entertainment avancierte die PlayStation zu einer der erfolgreichsten Spielkonsolen aller Zeiten (102,5 Millionen verkaufte Exemplare weltweit[10]) und stürzte im Bereich Heimkonsolen den einstigen Marktführer Nintendo vom Thron.', 'platform017.php'),
+(18, 'PlayStation 2', 'PS2', 1, 19, 6, '../img/platform_logos/platform018_logo.png', '../img/platform_photos/platform018_photo.png', 4, 'CD-ROM', 157.68, 17, 19, '2000-03-04', 'Die PlayStation 2 (offizielle Abkürzung: PS2) ist eine stationäre Spielkonsole, die von Sony Computer Entertainment am 4. März 2000 in Japan veröffentlicht wurde.[2][3] Die PlayStation 2 ist die zweite Spielkonsole der PlayStation-Marke. Die Produktion wurde nach über 12 Jahren am 29. Dezember 2012 in Japan eingestellt.[4] Die PlayStation 2 stand in direkter Konkurrenz zum Nintendo GameCube, der Sega Dreamcast und Microsofts Xbox. ', 'platform018.php'),
+(19, 'PlayStation 3', 'PS3', 1, 19, 7, '../img/platform_logos/platform019_logo.png', '../img/platform_photos/platform019_photo.png', 4, 'CD-ROM', 87.4, 18, 20, '2006-11-11', 'Die PlayStation 3 (offizielle Abkürzung: PS3) ist eine stationäre Spielkonsole, welche von Sony Computer Entertainment im Mai 2005 erstmals auf der Spielmesse E3 in Los Angeles als offizieller Nachfolger der PlayStation 2 vorgestellt wurde. Die PlayStation 3 ist die vierte Spielkonsole der PlayStation-Marke.', 'platform021.php'),
+(20, 'PlayStation 4', 'PS4', 1, 19, 8, '../img/platform_logos/platform020_logo.png', '../img/platform_photos/platform020_photo.png', 4, 'CD-ROM', 115, 19, 21, '2013-11-15', 'Die PlayStation 4 (offizielle Abkürzung: PS4) ist eine stationäre Spielkonsole von Sony Interactive Entertainment LLC (bis April 2016: Sony Computer Entertainment Inc.). Sie wurde als Nachfolger der PlayStation 3 am 20. Februar 2013 auf einer Pressekonferenz von Sony vorgestellt. Die Markteinführung erfolgte am 15. November 2013 in Nordamerika und am 29. November 2013 in Europa, Südamerika und Australien. Die PlayStation 4 steht in direkter Konkurrenz zu Microsofts Xbox One sowie Nintendos Wii U und Nintendo Switch. Die PlayStation 4 ist die insgesamt sechste Spielkonsole der Marke PlayStation, ausgenommen Hardware-Revisionen. Am 8. Oktober 2019 wurde der Nachfolger PlayStation 5 angekündigt.', 'platform020.php'),
+(21, 'PlayStation 5', 'PS5', 1, 19, 9, '../img/platform_logos/platform021_logo.png', '../img/platform_photos/platform021_photo.png', 4, 'CD-ROM', 13.4, 20, NULL, '2020-11-12', 'Die PlayStation 5 (offizielle Abkürzung: PS5) ist eine zur Marke PlayStation gehörende stationäre Spielkonsole des japanischen Konzerns Sony, welche am 19. November 2020 auf den europäischen Markt gekommen ist. Sie ist der Nachfolger der PlayStation 4, zu der eine Abwärtskompatibilität besteht, und steht in Konkurrenz zu Microsofts Konsole Xbox Series sowie Nintendos Switch. Bis September 2021 wurden weltweit über 13,4 Millionen Exemplare verkauft.', 'platform021.php'),
+(22, 'Xbox', NULL, 1, 22, 6, '../img/platform_logos/platform022_logo.png', '../img/platform_photos/platform022_photo.png', 5, 'CD-ROM', 25, NULL, 23, '2001-11-15', 'Die Xbox ist eine von Microsoft entwickelte Spielkonsole, die größtenteils auf leicht modifizierten PC-Komponenten basiert. Der Erfolg der Spielkonsole sorgte für die Etablierung der gleichnamigen Marke Xbox. Die Xbox wurde zuerst am 15. November 2001 in den USA,[2] dann am 22. Februar 2002 in Japan und am 14. März 2002 in Europa veröffentlicht.', 'platform022.php'),
+(23, 'Xbox 360', NULL, 1, 22, 7, '../img/platform_logos/platform023_logo.png', '../img/platform_photos/platform023_photo.png', 5, 'CD-ROM', 85.5, 22, 24, '2005-11-22', 'Die Xbox 360 ist eine von Microsoft entwickelte Spielkonsole und Nachfolger der ersten Xbox. Der Projektname der Konsole war Xenon. In der Presse wurde sie vor Bekanntgabe des Namens auch als Xbox 2 oder Xbox Next bezeichnet. Sie wurde Ende 2005 auf den Märkten der Vereinigten Staaten, Europas und Japans eingeführt. In Ozeanien war sie ab Ende März 2006 erhältlich. Es ist die zweite Spielkonsole der Xbox-Produktreihe und stand in Konkurrenz zur Sony PlayStation 3 und Nintendo Wii. Für die Xbox 360 gibt es einen Online-Service namens Xbox Live, der den Nutzern erlaubt, online zu spielen, Spiele herunterzuladen (Xbox Live Arcade) sowie Musik, TV-Programme und Filme durch Xbox Music und das Xbox Video Portal zu kaufen und zu streamen.', 'platform023.php'),
+(24, 'Xbox One', NULL, 1, 22, 8, '../img/platform_logos/platform024_logo.png', '../img/platform_photos/platform024_photo.jpg', 5, 'CD-ROM', 48.47, 23, 25, '2013-11-22', 'Die Xbox One ist eine von Microsoft entwickelte stationäre Spielkonsole und der Nachfolger der Xbox 360. Das System wurde am 21. Mai 2013 vorgestellt und steht als Konsole in direkter Konkurrenz zu Sonys PlayStation 4 und Nintendos Wii U und Nintendo Switch.[8] Es ist die insgesamt dritte Spielkonsole der Xbox-Marke, Hardware-Revisionen ausgenommen.', 'platform024.php'),
+(25, 'Xbox Series', NULL, 1, 22, 9, '../img/platform_logos/platform025_logo.jpg', '../img/platform_photos/platform025_photo.jpg', 5, 'CD-ROM', 6.5, 24, NULL, '2020-11-10', 'Xbox Series X und Xbox Series S sind von Microsoft entwickelte stationäre Spielkonsolen und Nachfolger der Xbox One. Die Xbox Series X wurde auf der Electronic Entertainment Expo (E3) am 9. Juni 2019 vorgestellt[2] und die Xbox Series S wurde nach einem Leak am 8. September 2020 von Microsoft über Twitter offiziell bestätigt. Die Konsolen stehen in Konkurrenz zu Sonys Konsole PlayStation 5 der aktuellen und der zur vorherigen Konsolengeneration gehörenden Nintendo Switch. Bis Januar 2022 wurden geschätzt rund 12 Millionen Konsolen ausgeliefert.', 'platform025.php'),
+(26, 'Steam', NULL, 4, 20, NULL, '../img/platform_logos/platform026_logo.png', '../img/platform_photos/platform026_photo.png', 6, 'Download', NULL, NULL, NULL, '2003-09-12', 'Steam ist eine Internet-Vertriebsplattform für Computerspiele, Software, Filme, Serien und Computergeräte, die von der Valve Corporation entwickelt und betrieben wird. Sie verzeichnete laut Herstellerangaben im Jahr 2019 über eine Milliarde aktive Benutzerkonten.[1] Täglich nutzen etwa 47 Millionen Nutzer die Plattform (2018).[2] Im März 2020 wurde ein Rekord von über 20 Millionen gleichzeitigen Nutzern aufgestellt, davon über 6 Millionen aktive Spieler.', 'platform026.php'),
+(27, 'Ubisoft Connect', NULL, 4, 21, NULL, '../img/platform_logos/platform027_logo.png', '../img/platform_photos/platform027_photo.webp', 7, 'Download', NULL, NULL, NULL, '2012-07-03', 'Ubisoft Connect (formerly Uplay) is a digital distribution, digital rights management, multiplayer and communications service developed by Ubisoft to provide an experience similar to the achievements/trophies offered by various other game companies. The service is provided across various platforms. Ubisoft Connect is used exclusively by first-party Ubisoft games, and although some third-party ones are sold through the Ubisoft store, they do not use the Ubisoft Connect platform.', 'platform027.php'),
+(28, 'Virtual Boy', 'VB', 2, 1, 4, '../img/platform_logos/platform028_logo.png', '../img/platform_photos/platform028_photo.png', 1, 'VB Game Pak', 0.77, 7, 1, '1995-07-21', 'Der Virtual Boy (jap. バーチャルボーイ, Bācharu Bōi) ist ein stationäres Virtual-Reality-Headset von Nintendo, der 1995 in Japan und den USA veröffentlicht wurde. Der Virtual Boy ähnelt einer Tauchmaske, in die man hineinsieht. Jedes Auge nimmt dabei ein anderes, leicht versetztes Bild wahr, wodurch ein real wirkender 3D-Effekt erzeugt wird.', 'platform028.php');
 
 -- --------------------------------------------------------
 
@@ -887,8 +890,6 @@ INSERT INTO `port` (`no`, `refGame`, `refPlatform`) VALUES
 (33, 28, 9),
 (34, 31, 9),
 (35, 32, 5),
-(36, 32, 13),
-(37, 32, 14),
 (38, 34, 2),
 (39, 35, 2),
 (40, 36, 2),
@@ -925,24 +926,10 @@ INSERT INTO `port` (`no`, `refGame`, `refPlatform`) VALUES
 (71, 77, 26),
 (72, 77, 24),
 (73, 77, 4),
-(74, 78, 13),
-(75, 78, 14),
 (76, 78, 2),
-(77, 79, 13),
-(78, 79, 14),
-(79, 80, 13),
-(80, 80, 14),
-(81, 81, 13),
-(82, 81, 14),
-(83, 82, 13),
-(84, 82, 14),
-(85, 83, 13),
-(86, 83, 14),
 (87, 83, 6),
 (88, 83, 20),
 (89, 83, 26),
-(90, 84, 13),
-(91, 84, 14),
 (92, 84, 6),
 (93, 84, 20),
 (94, 84, 26),
@@ -1084,7 +1071,11 @@ CREATE TABLE `publisher` (
 INSERT INTO `publisher` (`pubNo`, `name`) VALUES
 (1, 'Nintendo'),
 (2, 'Square'),
-(3, 'The Pokémon Company');
+(3, 'The Pokémon Company'),
+(4, 'Sony'),
+(5, 'Microsoft'),
+(6, 'Valve'),
+(7, 'Ubisoft');
 
 -- --------------------------------------------------------
 
@@ -1357,13 +1348,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `consoletype`
 --
 ALTER TABLE `consoletype`
-  MODIFY `ctNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ctNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `developer`
 --
 ALTER TABLE `developer`
-  MODIFY `devNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `devNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT für Tabelle `game`
@@ -1435,7 +1426,7 @@ ALTER TABLE `prequel`
 -- AUTO_INCREMENT für Tabelle `publisher`
 --
 ALTER TABLE `publisher`
-  MODIFY `pubNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pubNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT für Tabelle `remake`
