@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 18. Mrz 2022 um 20:44
+-- Erstellungszeit: 20. Mrz 2022 um 12:28
 -- Server-Version: 10.4.22-MariaDB
--- PHP-Version: 8.1.2
+-- PHP-Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -197,7 +197,19 @@ INSERT INTO `game` (`gNo`, `title`, `orgPlatform`, `pagePath`, `imgCover`, `imgL
 (87, 'Wario Land II', 12, 'game0087.php', '../img/game_covers/game0087_cover.png', NULL, 90, 'ワリオランド2 盗まれた財宝', 'Wario Land 2', 9, '1998-10-21', 'Wario Land II wurde, wie schon sein Vorgänger, für den Game Boy veröffentlicht, allerdings kann man es auch in Farbe auf dem Game Boy Color spielen. Wario lebt in seinem Schloss, das er sich nach seinem letztem Abenteuer (Wario Land) verdient hat.<br>Kapitän Kandis stiehlt Wario seinen Schatz, um sich für ihre Niederlage in Wario Land: Super Mario Land 3 zu rächen. Wario entdeckt den Diebstahl und macht sich auf die Verfolgungsjagd.'),
 (88, 'Wario Land 3', 12, 'game0088.php', '../img/game_covers/game0088_cover.png', NULL, 91, 'ワリオランド3 不思議なオルゴール', NULL, 9, '2000-03-21', 'Wario Land 3 wurde im März 2000 für den Game Boy Color veröffentlicht. Auch hier kann Wario sich wie im Vorgänger Wario Land II in verschiedene Formen verwandeln.<br>Wario machte mit seinem Privatflugzeug einen Ausflug, bis der Motor ausfiel und die Maschine in einem Wald abstürzte. Nachdem Wario aus seiner Bewusstlosigkeit aufwachte, suchte er den ganzen Tag vergeblich nach einem Weg nach draußen. Schließlich stolperte er in eine Höhle, in der auf einem Sockel eine einsame Spieldose lag. Wario versuchte, sie wieder zum Laufen zu bringen, als er plötzlich in die Spieluhr eingesogen wurde!'),
 (89, 'Wario Land 4', 10, 'game0089.php', '../img/game_covers/game0089_cover.png', NULL, 88, 'ワリオランドアドバンス ヨーキのお宝', NULL, 9, '2001-08-21', 'Bei Wario Land 4 (ワリオランドアドバンス ヨーキのお宝 Wario Rando Adobansu: Yōki no Otakara in Japan, zu deutsch Wario Land Advance: Der Schatz der Goldenen Diva) handelt es sich um ein größtenteils im Jahr 2001 für den Game Boy Advance veröffentlichtes Jump \'n\' Run. Es erschien als vierter Teil der Hauptspiele der Wario Land-Serie, was als Namensgeber des Spiels gilt, sowie als fünfter Teil der gesamten Serie, da Virtual Boy Wario Land aufgrund des mangelnden Erfolgs des Virtual Boy nicht zu den Hauptspielen gezählt wird. Der Vorgänger, Wario Land 3, erschien bereits ein Jahr zuvor, während der Nachfolger, Wario Land: The Shake Dimension, erst sieben Jahre später veröffentlicht wurde. Somit galt Wario Land 4 sieben Jahre lang als aktuellster Titel der Wario Land-Serie. Als sich gut verkaufendes und mit überwiegend positiven Kritiken belohntes Spiel, erschien zu Wario Land 4 im Jahr 2002 ein gleichnamiges Buch, das das Abenteuer des Spiels nacherzählt. Zudem wurde es im Jahre 2011 im Rahmen des Nintendo-3DS-Botschafter-Programms neben 19 weiteren Spielen zum kostenlosen Download für jenes System bereitgestellt.'),
-(90, 'Wario Land: The Shake Dimension', 5, 'game0090.php', '../img/game_covers/game0090_cover.png', NULL, 78, 'ワリオランドシェイク', 'Wario Land: Shake It!', 9, '2008-07-24', 'Wario Land: The Shake Dimension (dt. Wario Land: Die Schütteldimension; sinngemäß Wario Land: Das Reich des Rüttelns; in NTSC-Regionen Wario Land: Shake It!; in Japan Wario Land Shake) ist ein in Japan im Juli 2008 und in allen anderen Ländern im September 2008 für Nintendo Wii veröffentlichtes Jump \'n\' Run. Es wurde vom japanischen Unternehmen Good-Feel[2], das von einem ehemaligen Mitarbeiter Nintendos ins Leben gerufen wurde, entwickelt und von Nintendo herausgegeben. Es erschien als sechster und bislang neuester Teil der Wario Land-Serie und ist der erste Teil der Serie, der auf einer stationären Konsole erschien. Der Vorgänger, Wario Land 4, erschien ganze sieben Jahre zuvor, weswegen lange anzunehmen war, dass die Wario Land-Serie nicht fortgeführt wird, doch die überraschende Veröffentlichung von Wario Land: The Shake Dimension belebte die Serie wieder.');
+(90, 'Wario Land: The Shake Dimension', 5, 'game0090.php', '../img/game_covers/game0090_cover.png', NULL, 78, 'ワリオランドシェイク', 'Wario Land: Shake It!', 9, '2008-07-24', 'Wario Land: The Shake Dimension (dt. Wario Land: Die Schütteldimension; sinngemäß Wario Land: Das Reich des Rüttelns; in NTSC-Regionen Wario Land: Shake It!; in Japan Wario Land Shake) ist ein in Japan im Juli 2008 und in allen anderen Ländern im September 2008 für Nintendo Wii veröffentlichtes Jump \'n\' Run. Es wurde vom japanischen Unternehmen Good-Feel[2], das von einem ehemaligen Mitarbeiter Nintendos ins Leben gerufen wurde, entwickelt und von Nintendo herausgegeben. Es erschien als sechster und bislang neuester Teil der Wario Land-Serie und ist der erste Teil der Serie, der auf einer stationären Konsole erschien. Der Vorgänger, Wario Land 4, erschien ganze sieben Jahre zuvor, weswegen lange anzunehmen war, dass die Wario Land-Serie nicht fortgeführt wird, doch die überraschende Veröffentlichung von Wario Land: The Shake Dimension belebte die Serie wieder.'),
+(91, 'Super Mario Bros.', 8, 'game0091.php', '../img/game_covers/game0091_cover.jpg', NULL, 84, 'スーパーマリオブラザーズ', 'SMB', 10, '1985-09-13', 'Super Mario Bros. (Japanisch: スーパーマリオブラザーズ, in Super Mario All-Stars: \"Super Mario\") ist ein 1985 erschienenes Jump \'n\' Run für das Nintendo Entertainment System. Es war das erste seitenscrollende Videospiel überhaupt und gilt als ein Meilenstein der Videospielgeschichte.<br>Der Einfluss des Spiels auf die Entwicklung der Mario-Serie ist enorm. So findet das Geschehen erstmals im Pilz-Königreich statt und die Hauptcharaktere Bowser, Toadstool und Toad feiern ihr Debüt. Darüber hinaus stellen sich erstmals Gegner wie Gumbas und Piranha-Pflanzen in den Weg Marios.'),
+(92, 'Super Mario Bros. Deluxe', 11, 'game0092.php', '../img/game_covers/game0092_cover.png', NULL, 80, 'スーパーマリオブラザーズ DX', 'SMBDX', 10, '1999-05-10', 'Super Mario Bros. Deluxe (häufig verkürzt als Super Mario Bros. DX oder SMBDX) ist ein Remake des 1985 veröffentlichten NES Titels Super Mario Bros.. Es wurde 1999 für den Game Boy Color entwickelt. Das Spiel selbst wurde verhältnismäßig unverändert von der ursprünglichen NES Version gelassen und ließ die grafischen Updates der Super Mario All-Stars Version aus. Die Unterschiede sind zur Orginal-Version, ein Weltdiagramm, bewegend an dem linken Rand, viel mehr Spielmodi, Unterstützung vom Gameboy-Printer und jederzeit die Möglichkeit zu haben, als Luigi zu spielen. '),
+(93, 'Super Mario Bros.: The Lost Levels', 8, 'game0093.php', '../img/game_covers/game0093_cover.png', NULL, 85, 'スーパーマリオブラザーズ 2', 'SMBLL', 10, '1986-06-03', 'Super Mario Bros.: The Lost Levels ist ein zu der Zeit nur in Japan erschienenes Jump\'n\'Run, das seinen Weg in den Rest der Welt erst durch Super Mario All-Stars schaffte. Es erschien in Japan unter dem Namen Super Mario Bros. 2. Das europäische Super Mario Bros. 2 hingegen heißt in Japan Super Mario Bros. USA.<br>Aufgrund dessen, weil es in Amerika und in Europa viel zu schwer für die Spieler durchzuspielen sei, wurde diesem Spiel keine Chance auf anderen Kontinenten gegeben. So wurde ein völlig anderes Super Mario Bros. 2 außerhalb Japans veröffentlicht, welches auf dem ebenfalls von Nintendo produzierten Spiel Doki Doki Panic basierte. '),
+(94, 'Super Mario Bros. 2', 8, 'game0094.php', '../img/game_covers/game0094_cover.png', NULL, 78, 'スーパーマリオブラザーズ USA', 'SMB2', 10, '1988-10-09', 'Super Mario Bros. 2 ist ein im Jahr 1988 erschienendes Jump \'n\' Run für das Nintendo Entertainment System. Das Spiel beinhaltet den ersten Auftritt von Prinzessin Toadstool und Toad als spielbaren Charakter überhaupt, zusätzlich kann man auch Mario und Luigi auswählen. Es stellt das zweite Spiel der Super Mario Bros.-Serie dar. '),
+(95, 'Super Mario Advance', 10, 'game0095.php', '../img/game_covers/game0095_cover.jpg', NULL, 84, 'スーパーマリオアドバンス', 'SMA1', 10, '2001-03-21', 'Super Mario Advance ist ein Remake des NES-Klassikers Super Mario Bros. 2.<br>Änderungen zum Beispiel, dass man überall speichern kann oder dass der Endgegner aus Welt 6 mit einem anderen ausgetauscht wurde. Außerdem wurden Grafik und Ton überarbeitet und auf das Niveau des GameBoys angehoben. Ein anderes Merkmal ist, dass die Charaktere (Protagonisten und Bosse) nun sprechen. Außerdem ist dem Spiel noch ein weiteres Spiel beigelegt, dasselbe wie bei jedem Super Mario Advance: Mario Bros..'),
+(96, 'Super Mario Bros. 3', 8, 'game0096.php', '../img/game_covers/game0096_cover.png', NULL, 95, 'スーパーマリオブラザーズ 3', 'SMB3', 10, '1988-10-23', 'Super Mario Bros. 3 ist ein Jump \'n\' Run, das 1988 in Japan und erst drei Jahre später in Europa erschienen ist. Es ist der Nachfolger von Super Mario Bros. 2 in Europa und den Vereinigten Staaten bzw. von Super Mario Bros.: The Lost Levels in Japan. Ursprünglich für das Nintendo Entertainment System erschienen, erlebte es mittlerweile zahlreiche Remakes wie Super Mario Advance 4: Super Mario Bros. 3 (GBA).<br>Diesmal versucht Bowser, die Herrschaft über die Pilz-Welt zu erlangen, die hinter dem Pilz-Königreich liegt, und ist der Endgegner des Spiels. Erstmals treffen die Protagonisten Mario und Luigi auf die Koopalinge, welche lange Zeit für seine Kinder gehalten wurden. Außerdem haben zahlreiche neue Verwandlungen, Items und Gegner ihren ersten Auftritt in einem Videospiel überhaupt.'),
+(97, 'Super Mario Advance 4: Super Mario Bros. 3', 10, 'game0097.php', '../img/game_covers/game0097_cover.png', NULL, 94, 'スーパーマリオアドバンス 4', 'SMA4', 10, '2003-07-11', 'Bei Super Mario Advance 4: Super Mario Bros. 3 handelt es sich um eine erneuerte Version des NES-Klassikers Super Mario Bros. 3, sowie den letzten Teil der Super Mario Advance-Serie. Die Grafiken und der Sound wurden der All-Star-Version entnommen, es wurden jedoch zahlreiche Änderungen eingeführt. Das Spiel hat sich bereits über 5,2 Millionen mal verkauft.'),
+(98, 'Super Mario World', 7, 'game0098.php', '../img/game_covers/game0098_cover.png', NULL, 94, 'スーパーマリオワールド', 'SMW', 10, '1990-11-21', 'Super Mario World ist ein im Jahr 1990 erschienendes Jump \'n\' Run und das erste Spiel der Mario-Serie für das Super Nintendo Entertainment System (SNES). In Japan unter dem Namen Super Mario Bros. 4: Super Mario World bekannt, wurde dieser Name außerhalb Japans nicht übernommen, da es laut Produzent Shigeru Miyamoto ein gänzlich eigenes Spiel ist. Es ist mit über 20 Millionen verkaufter Einheiten das erfolgreichste Spiel für seine Konsole und zählt zusätzlich zu den meistverkauften Videospielen aller Zeiten.'),
+(99, 'Super Mario World: Super Mario Advance 2', 10, 'game0099.php', '../img/game_covers/game0098_cover.png', NULL, 92, 'スーパーマリオアドバンス 2', 'SMA2', 10, '2001-12-14', 'Super Mario World: Super Mario Advance 2 ist ein Remake des SNES-Klassiker Super Mario World. Viele Unterschiede gibt es nicht bis auf wenige Kleinigkeiten, wie zum Beispiel, dass man überall speichern kann. Außerdem ist dem Spiel noch ein weiteres Spiel beigelegt, dasselbe wie jedem Super Mario Advance: Mario Bros. . Weil es kaum Unterschiede zum Original und zum Remake gibt, sollte für mehr Informationen auf folgendem Artikel weitergelesen werden: Super Mario World.'),
+(100, 'Super Mario World 2: Yoshi\'s Island', 7, 'game0100.php', '../img/game_covers/game0100_cover.jpg', NULL, 96, 'スーパーマリオ　ヨッシーアイランド', 'YI^SMW2', 11, '1995-08-05', 'Super Mario World 2: Yoshi\'s Island ist ein Jump \'n\' Run für das Super Nintendo Entertainment System und stammt aus dem Jahr 1995. Zeitlich betrachtet findet es vor allen anderen Spielen statt, da hier erstmals Baby Mario und Baby Luigi auftreten.'),
+(101, 'Yoshi\'s Island: Super Mario Advance 3', 10, 'game0101.php', '../img/game_covers/game0101_cover.jpg', NULL, 91, 'スーパーマリオアドバンス 3', 'SMA3', 11, '2002-09-20', 'Super Mario Advance 3: Yoshi\'s Island ist ein Remake des SNES-Klassiker Super Mario World 2: Yoshi\'s Island. Viele Unterschiede gibt es nicht, lediglich einige Kleinigkeiten. Die größte Neuerung ist das Einfügen neuer (und schwerer) Bonuslevel in alle 6 Welten. Außerdem ist dem Spiel noch ein weiteres Spiel beigelegt, dasselbe wie jedem Spiel der Super Mario Advance-Serie: Mario Bros..'),
+(102, 'Super Mario All-Stars', 7, 'game0102.php', '../img/game_covers/game0102_cover.jpg', NULL, 70, 'スーパーマリオコレクション', NULL, 10, '1993-07-14', 'Super Mario All-Stars ist ein Spiel, welches für das SNES in Europa am 16. Dezember 1993 sowie als Port für die Nintendo Wii am 3. Dezember 2010 in der Box Super Mario All-Stars - 25 Jahre: Jubiläumsedition erschienen ist. Das Spiel setzt sich aus vier Spielen zusammen: Super Mario Bros., Super Mario Bros. 2, Super Mario Bros. 3 und Super Mario Bros.: The Lost Levels, welches damals für die SNES als erstes in Europa erschien. Es gibt keine Unterschiede zwischen der Version für die Wii und für das SNES. Die Wii-Version ist nicht für den Einzelverkauf bestimmt. Als ein anderes Remake kann man Super Mario All-Stars + Super Mario World bezeichnen, das etwas über ein Jahr nach diesem Spiel erschien und zusätzlich Super Mario World enthält.');
 
 -- --------------------------------------------------------
 
@@ -312,7 +324,19 @@ INSERT INTO `game_developer` (`no`, `refGame`, `refDeveloper`) VALUES
 (99, 87, 2),
 (100, 88, 2),
 (101, 89, 2),
-(102, 90, 18);
+(102, 90, 18),
+(103, 91, 4),
+(104, 92, 2),
+(105, 93, 4),
+(106, 94, 4),
+(107, 95, 2),
+(108, 96, 4),
+(109, 97, 4),
+(110, 98, 4),
+(111, 99, 4),
+(112, 100, 4),
+(113, 101, 4),
+(114, 102, 4);
 
 -- --------------------------------------------------------
 
@@ -449,7 +473,18 @@ INSERT INTO `game_genre` (`no`, `refGame`, `refGenre`) VALUES
 (116, 88, 14),
 (118, 88, 6),
 (119, 89, 14),
-(120, 90, 14);
+(120, 90, 14),
+(121, 91, 14),
+(122, 92, 14),
+(123, 93, 14),
+(124, 94, 14),
+(125, 95, 14),
+(126, 96, 14),
+(127, 97, 14),
+(128, 98, 14),
+(129, 99, 14),
+(130, 100, 14),
+(131, 101, 14);
 
 -- --------------------------------------------------------
 
@@ -599,7 +634,29 @@ INSERT INTO `game_mode` (`no`, `refGame`, `refMode`) VALUES
 (129, 87, 1),
 (130, 88, 1),
 (131, 89, 1),
-(132, 90, 1);
+(132, 90, 1),
+(133, 91, 1),
+(134, 91, 2),
+(135, 92, 1),
+(136, 92, 2),
+(137, 93, 1),
+(138, 93, 2),
+(139, 94, 1),
+(140, 95, 1),
+(141, 95, 2),
+(142, 96, 1),
+(143, 96, 2),
+(144, 97, 1),
+(145, 97, 2),
+(146, 98, 1),
+(147, 98, 2),
+(148, 99, 1),
+(149, 99, 2),
+(150, 100, 1),
+(151, 100, 2),
+(152, 101, 1),
+(153, 102, 1),
+(154, 102, 2);
 
 -- --------------------------------------------------------
 
@@ -711,7 +768,19 @@ INSERT INTO `game_publisher` (`no`, `refGame`, `refPublisher`) VALUES
 (97, 87, 1),
 (98, 88, 1),
 (99, 89, 1),
-(100, 90, 1);
+(100, 90, 1),
+(101, 91, 1),
+(102, 92, 1),
+(103, 93, 1),
+(104, 94, 1),
+(105, 95, 1),
+(106, 96, 1),
+(107, 97, 1),
+(108, 98, 1),
+(109, 99, 1),
+(110, 100, 1),
+(111, 101, 1),
+(112, 102, 1);
 
 -- --------------------------------------------------------
 
@@ -763,10 +832,7 @@ CREATE TABLE `list` (
 
 INSERT INTO `list` (`entryNo`, `refGame`, `refStatus`, `refUser`, `score`) VALUES
 (17, 6, 6, 1, 9),
-(18, 3, 3, 1, 10),
-(19, 55, 2, 1, NULL),
-(20, 55, 2, 1, NULL),
-(21, 40, 6, 1, 10);
+(18, 3, 3, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -823,7 +889,7 @@ INSERT INTO `platform` (`pNo`, `name`, `alias`, `consoleType`, `developer`, `gen
 (3, 'Nintendo GameCube', 'NGC', 1, 1, 6, '../img/platform_logos/platform003_logo.png', '../img/platform_photos/platform003_photo.png', 1, 'GameCube Mini Game Disc', 21.75, 1, 5, '2001-09-14', 'Der Nintendo GameCube [\'geɪm \'kjuːb] (englisch für Spielwürfel, jap. ニンテンドー ゲームキューブ, Hepburn: Nintendō Gēmukyūbu, offiziell abgekürzt als GCN in Europa und Nordamerika und NGC in Japan, meist einfach nur GameCube oder kurz GC genannt) ist eine stationäre Spielkonsole des japanischen Konsolenherstellers und Videospielentwicklers Nintendo und Nachfolger des Nintendo 64. Er stand als Konsole in direkter Konkurrenz zu Segas Dreamcast, Sonys PlayStation 2 und Microsofts Xbox. Der Nintendo GameCube verkaufte sich weltweit etwa 21,74 Millionen Mal, bis der Verkauf im Jahre 2007 offiziell eingestellt wurde.[3] Nachfolger des Nintendo GameCube ist die im Jahr 2006 erschienene Wii, welche in ihrer ersten Ausführung abwärtskompatibel zu Nintendo-GameCube-Software und -Zubehör ist.', 'platform003.php'),
 (4, 'Nintendo DS', 'NDS', 2, 2, 7, '../img/platform_logos/platform004_logo.png', '../img/platform_photos/platform004_photo.png', 1, 'Nintendo DS Game Card', 154.02, 10, 2, '2004-11-21', 'Der Nintendo DS (kurz NDS oder DS) ist eine vom japanischen Spielkonsolenhersteller Nintendo entwickelte und produzierte Handheld-Konsole und inoffizieller Nachfolger des Game Boy Advance. Der Nintendo DS verfügt über zwei Bildschirme, von denen der untere ein druckempfindlicher Touchscreen ist, sowie ein eingebautes Mikrofon. Diese sollen gegenüber früheren Konsolen eine neuartige und vereinfachte Spielsteuerung ermöglichen. Der DS spielte eine entscheidende Rolle im Durchbruch des Touchscreens und etablierte diesen im Massenmarkt.', 'platform004.php'),
 (5, 'Nintendo Wii', NULL, 1, 1, 7, '../img/platform_logos/platform005_logo.png', '../img/platform_photos/platform005_photo.png', 1, 'Wii Optical Disc', 101.63, 3, 9, '2006-11-19', 'Die Wii [wiː] ist eine 2006 von dem japanischen Unternehmen Nintendo veröffentlichte stationäre Spielkonsole. Sie stellt den Nachfolger des Nintendo GameCube dar. Sie wurde erstmals in Nordamerika am 19. November 2006, dann in Japan am 2. Dezember 2006 und am 8. Dezember 2006 schließlich auch in Europa veröffentlicht. Während ihrer Lebenszeit stand sie in direkter Konkurrenz zu Sonys PlayStation 3 und Microsofts Xbox 360. Ihr wesentliches Merkmal ist der Controller, der einer herkömmlichen Fernbedienung ähnelt, allerdings über eingebaute Bewegungssensoren und Vibrationsmotoren verfügt. Diese registrieren die Lage und die Bewegungen des Controllers im Raum und setzen sie in entsprechende Bewegungen von Spielfiguren oder -elementen auf dem Bildschirm um.[3] Mussten die Nutzer bei herkömmlichen Spielsystemen Knöpfe des Controllers oder Analogsticks betätigen, so können sie die Spiele nun steuern, indem sie den Controller selbst bewegen. Das Spielsystem aus Hardware und Software misst die dreidimensionalen Bewegungen des Nutzers. Die Konsole wurde über 100 Millionen Mal verkauft[1] und ist damit eine der meistverkauften Spielkonsolen überhaupt. Der bewegungssensitive Controller der Wii sorgte aufgrund des großen Verkaufserfolgs der Konsole für einen deutlichen Verkaufsschub von bewegungsgesteuerten Spielen. Nintendos Konsole veranlasste Wettbewerber zur Veröffentlichung eigener bewegungssensitiver Hardware-Erweiterungen, Sonys PlayStation Move und Microsofts Kinect.[4] Sie etablierte Bewegungssteuerung als eine attraktive Option in der Videospielindustrie und beeinflusste die fortschreitende Entwicklung in diesem Bereich.[5] Außerdem ist sie für ihre charakteristische Musik der einzelnen Kanäle bekannt.', 'platform005.php'),
-(6, 'Nintendo Switch', 'NSw', 3, 3, 8, '../img/platform_logos/platform006_logo.png', '../img/platform_photos/platform006_photo.jpg', 1, 'Nintendo Switch Game Card', 103.54, 9, NULL, '2017-03-03', 'Die Nintendo Switch (auch nur Switch) ist eine Videospielkonsole des japanischen Unternehmens Nintendo. Sie erschien am 3. März 2017 in Europa, Australien, Nordamerika und Asien[4] sowie am 15. August 2017 in Argentinien.[5] Als sogenannte hybride Konsole lässt sich der Nachfolger der Wii U sowohl als stationäre, also mit einem externen Bildschirm verbundene Konsole nutzen, wie auch als tragbare Handheld-Konsole. Die Joy-Con genannten abnehmbaren Bedienelemente ermöglichen Spiele in einer dritten Variante, dem sogenannten Tisch-Modus. Die Nintendo Switch steht in direkter Konkurrenz zu Sonys PlayStation 4 und Microsofts Xbox One. Die Nintendo Switch ist die in Verkaufszahlen bislang erfolgreichste aller stationären Nintendo-Konsolen.', 'platform006.php'),
+(6, 'Nintendo Switch', NULL, 3, 3, 8, '../img/platform_logos/platform006_logo.png', '../img/platform_photos/platform006_photo.jpg', 1, 'Nintendo Switch Game Card', 103.54, 9, NULL, '2017-03-03', 'Die Nintendo Switch (auch nur Switch) ist eine Videospielkonsole des japanischen Unternehmens Nintendo. Sie erschien am 3. März 2017 in Europa, Australien, Nordamerika und Asien[4] sowie am 15. August 2017 in Argentinien.[5] Als sogenannte hybride Konsole lässt sich der Nachfolger der Wii U sowohl als stationäre, also mit einem externen Bildschirm verbundene Konsole nutzen, wie auch als tragbare Handheld-Konsole. Die Joy-Con genannten abnehmbaren Bedienelemente ermöglichen Spiele in einer dritten Variante, dem sogenannten Tisch-Modus. Die Nintendo Switch steht in direkter Konkurrenz zu Sonys PlayStation 4 und Microsofts Xbox One. Die Nintendo Switch ist die in Verkaufszahlen bislang erfolgreichste aller stationären Nintendo-Konsolen.', 'platform006.php'),
 (7, 'Super Nintendo Entertainment System', 'SNES^Super Famicom', 1, 2, 4, '../img/platform_logos/platform007_logo.png', '../img/platform_photos/platform007_photo.jpg', 1, 'SNES Game Pak', 49.1, 8, 28, '1990-11-21', 'Das Super Nintendo Entertainment System (meist abgekürzt als Super Nintendo, Super NES, Super-NES oder SNES; orig. jap. スーパーファミコン Sūpā Famikon bzw. Super Famicom, abgekürzt SFC) ist eine stationäre 16-Bit-Spielkonsole des japanischen Unternehmens Nintendo. Es ist die zweite weltweit veröffentlichte stationäre Spielkonsole des Unternehmens und sein Controller, der SNES-Controller, führte die Schultertasten ein, die fortan zum Standard aller nachfolgend erschienenen Gamepads wurden.[2][3][4] Veröffentlicht wurde das Super Nintendo Entertainment System erstmals am 21. November 1990 in Japan, dann am 23. August 1991 in Nordamerika[5] und am 11. April 1992 schließlich auch in Europa. In Deutschland war das System ab dem 15. August 1992 erhältlich. Das Super Nintendo Entertainment System ist der Vorgänger des Nintendo 64 (N64) und der Nachfolger des Nintendo Entertainment System (NES).', 'platform007.php'),
 (8, 'Nintendo Entertainment System', 'NES^Famicom', 1, 2, 3, '../img/platform_logos/platform008_logo.png', '../img/platform_photos/platform008_photo.jpg', 1, 'NES Game Pak', 61.91, NULL, 7, '1983-06-15', 'Das Nintendo Entertainment System (kurz meist NES genannt) ist eine stationäre 8-Bit-Spielkonsole des japanischen Spielkonsolenherstellers Nintendo. Die Konsole erschien in Nordamerika, Brasilien, Europa, Asien und Australien. Die japanische Version wurde als Famicom (kurz für Family Computer) vermarktet. Das NES war mit über 60 Millionen verkauften Einheiten lange Zeit die meistverkaufte Konsole überhaupt. Nach dem Zusammenbruch der Videospielebranche im Jahre 1983, dem sogenannten „Video Game Crash“, belebte Nintendo den Heimkonsolenmarkt mit ihrer Konsole neu. Der Controller führte das Steuerkreuz (kurz: D-Pad für Direction-Pad) ein und definierte die grundsätzliche Tastenanordnung der Gamepads. Bekannte Spieleserien wie Super Mario Bros., The Legend of Zelda, Metroid oder Castlevania gaben auf dem NES ihr Heimkonsolen-Debüt.', 'platform008.php'),
 (9, 'Nintendo Wii U', NULL, 1, 1, 8, '../img/platform_logos/platform009_logo.png', '../img/platform_photos/platform009_photo.png', 1, 'Wii U Optical Disc', 13.56, 5, 6, '2012-11-18', 'Die Wii U ist eine stationäre Spielkonsole des japanischen Unternehmens Nintendo. Sie stellt den Nachfolger der Wii dar und ist Nintendos sechste weltweit veröffentlichte Heimkonsole. In Nordamerika erschien sie am 18. November 2012, in Europa am 30. November 2012 und in Japan am 8. Dezember 2012. Die Wii U steht in direkter Konkurrenz zu Sonys PlayStation 4 und Microsofts Xbox One. Anfang 2017 stellte Nintendo die Produktion der Konsole ein. Der Nachfolger der Wii U ist die Nintendo Switch.', 'platform009.php'),
@@ -833,12 +899,12 @@ INSERT INTO `platform` (`pNo`, `name`, `alias`, `consoleType`, `developer`, `gen
 (17, 'PlayStation', 'PS1', 1, 19, 5, '../img/platform_logos/platform017_logo.png', '../img/platform_photos/platform017_photo.png', 4, 'CD-ROM', 102.49, NULL, 18, '1994-12-03', 'Die PlayStation (jap. プレイステーション, Pureisutēshon, offizielle Abkürzung: PS, Codename: PSX, auch PS1 genannt) ist eine stationäre Spielkonsole des japanischen Unternehmens Sony, die am 3. Dezember 1994[7][8][9] erstmals in Japan verkauft und deren Herstellung nach zwölf Jahren Verkaufszeitraum, im Jahr 2006, endgültig eingestellt wurde.[8] Die PlayStation ist die erste Spielkonsole der PlayStation-Marke. Mit Ken Kutaragi als Vorsitzendem der eigens dafür gegründeten Tochtergesellschaft Sony Computer Entertainment avancierte die PlayStation zu einer der erfolgreichsten Spielkonsolen aller Zeiten (102,5 Millionen verkaufte Exemplare weltweit[10]) und stürzte im Bereich Heimkonsolen den einstigen Marktführer Nintendo vom Thron.', 'platform017.php'),
 (18, 'PlayStation 2', 'PS2', 1, 19, 6, '../img/platform_logos/platform018_logo.png', '../img/platform_photos/platform018_photo.png', 4, 'CD-ROM', 157.68, 17, 19, '2000-03-04', 'Die PlayStation 2 (offizielle Abkürzung: PS2) ist eine stationäre Spielkonsole, die von Sony Computer Entertainment am 4. März 2000 in Japan veröffentlicht wurde.[2][3] Die PlayStation 2 ist die zweite Spielkonsole der PlayStation-Marke. Die Produktion wurde nach über 12 Jahren am 29. Dezember 2012 in Japan eingestellt.[4] Die PlayStation 2 stand in direkter Konkurrenz zum Nintendo GameCube, der Sega Dreamcast und Microsofts Xbox. ', 'platform018.php'),
 (19, 'PlayStation 3', 'PS3', 1, 19, 7, '../img/platform_logos/platform019_logo.png', '../img/platform_photos/platform019_photo.png', 4, 'CD-ROM', 87.4, 18, 20, '2006-11-11', 'Die PlayStation 3 (offizielle Abkürzung: PS3) ist eine stationäre Spielkonsole, welche von Sony Computer Entertainment im Mai 2005 erstmals auf der Spielmesse E3 in Los Angeles als offizieller Nachfolger der PlayStation 2 vorgestellt wurde. Die PlayStation 3 ist die vierte Spielkonsole der PlayStation-Marke.', 'platform021.php'),
-(20, 'PlayStation 4', 'PS4', 1, 19, 8, '../img/platform_logos/platform020_logo.png', '../img/platform_photos/platform020_photo.jpg', 4, 'CD-ROM', 115, 19, 21, '2013-11-15', 'Die PlayStation 4 (offizielle Abkürzung: PS4) ist eine stationäre Spielkonsole von Sony Interactive Entertainment LLC (bis April 2016: Sony Computer Entertainment Inc.). Sie wurde als Nachfolger der PlayStation 3 am 20. Februar 2013 auf einer Pressekonferenz von Sony vorgestellt. Die Markteinführung erfolgte am 15. November 2013 in Nordamerika und am 29. November 2013 in Europa, Südamerika und Australien. Die PlayStation 4 steht in direkter Konkurrenz zu Microsofts Xbox One sowie Nintendos Wii U und Nintendo Switch. Die PlayStation 4 ist die insgesamt sechste Spielkonsole der Marke PlayStation, ausgenommen Hardware-Revisionen. Am 8. Oktober 2019 wurde der Nachfolger PlayStation 5 angekündigt.', 'platform020.php'),
+(20, 'PlayStation 4', 'PS4', 1, 19, 8, '../img/platform_logos/platform020_logo.png', '../img/platform_photos/platform020_photo.png', 4, 'CD-ROM', 115, 19, 21, '2013-11-15', 'Die PlayStation 4 (offizielle Abkürzung: PS4) ist eine stationäre Spielkonsole von Sony Interactive Entertainment LLC (bis April 2016: Sony Computer Entertainment Inc.). Sie wurde als Nachfolger der PlayStation 3 am 20. Februar 2013 auf einer Pressekonferenz von Sony vorgestellt. Die Markteinführung erfolgte am 15. November 2013 in Nordamerika und am 29. November 2013 in Europa, Südamerika und Australien. Die PlayStation 4 steht in direkter Konkurrenz zu Microsofts Xbox One sowie Nintendos Wii U und Nintendo Switch. Die PlayStation 4 ist die insgesamt sechste Spielkonsole der Marke PlayStation, ausgenommen Hardware-Revisionen. Am 8. Oktober 2019 wurde der Nachfolger PlayStation 5 angekündigt.', 'platform020.php'),
 (21, 'PlayStation 5', 'PS5', 1, 19, 9, '../img/platform_logos/platform021_logo.png', '../img/platform_photos/platform021_photo.png', 4, 'CD-ROM', 13.4, 20, NULL, '2020-11-12', 'Die PlayStation 5 (offizielle Abkürzung: PS5) ist eine zur Marke PlayStation gehörende stationäre Spielkonsole des japanischen Konzerns Sony, welche am 19. November 2020 auf den europäischen Markt gekommen ist. Sie ist der Nachfolger der PlayStation 4, zu der eine Abwärtskompatibilität besteht, und steht in Konkurrenz zu Microsofts Konsole Xbox Series sowie Nintendos Switch. Bis September 2021 wurden weltweit über 13,4 Millionen Exemplare verkauft.', 'platform021.php'),
 (22, 'Xbox', NULL, 1, 22, 6, '../img/platform_logos/platform022_logo.png', '../img/platform_photos/platform022_photo.png', 5, 'CD-ROM', 25, NULL, 23, '2001-11-15', 'Die Xbox ist eine von Microsoft entwickelte Spielkonsole, die größtenteils auf leicht modifizierten PC-Komponenten basiert. Der Erfolg der Spielkonsole sorgte für die Etablierung der gleichnamigen Marke Xbox. Die Xbox wurde zuerst am 15. November 2001 in den USA,[2] dann am 22. Februar 2002 in Japan und am 14. März 2002 in Europa veröffentlicht.', 'platform022.php'),
 (23, 'Xbox 360', NULL, 1, 22, 7, '../img/platform_logos/platform023_logo.png', '../img/platform_photos/platform023_photo.png', 5, 'CD-ROM', 85.5, 22, 24, '2005-11-22', 'Die Xbox 360 ist eine von Microsoft entwickelte Spielkonsole und Nachfolger der ersten Xbox. Der Projektname der Konsole war Xenon. In der Presse wurde sie vor Bekanntgabe des Namens auch als Xbox 2 oder Xbox Next bezeichnet. Sie wurde Ende 2005 auf den Märkten der Vereinigten Staaten, Europas und Japans eingeführt. In Ozeanien war sie ab Ende März 2006 erhältlich. Es ist die zweite Spielkonsole der Xbox-Produktreihe und stand in Konkurrenz zur Sony PlayStation 3 und Nintendo Wii. Für die Xbox 360 gibt es einen Online-Service namens Xbox Live, der den Nutzern erlaubt, online zu spielen, Spiele herunterzuladen (Xbox Live Arcade) sowie Musik, TV-Programme und Filme durch Xbox Music und das Xbox Video Portal zu kaufen und zu streamen.', 'platform023.php'),
 (24, 'Xbox One', NULL, 1, 22, 8, '../img/platform_logos/platform024_logo.png', '../img/platform_photos/platform024_photo.jpg', 5, 'CD-ROM', 48.47, 23, 25, '2013-11-22', 'Die Xbox One ist eine von Microsoft entwickelte stationäre Spielkonsole und der Nachfolger der Xbox 360. Das System wurde am 21. Mai 2013 vorgestellt und steht als Konsole in direkter Konkurrenz zu Sonys PlayStation 4 und Nintendos Wii U und Nintendo Switch.[8] Es ist die insgesamt dritte Spielkonsole der Xbox-Marke, Hardware-Revisionen ausgenommen.', 'platform024.php'),
-(25, 'Xbox Series', NULL, 1, 22, 9, '../img/platform_logos/platform025_logo.png', '../img/platform_photos/platform025_photo.jpg', 5, 'CD-ROM', 6.5, 24, NULL, '2020-11-10', 'Xbox Series X und Xbox Series S sind von Microsoft entwickelte stationäre Spielkonsolen und Nachfolger der Xbox One. Die Xbox Series X wurde auf der Electronic Entertainment Expo (E3) am 9. Juni 2019 vorgestellt[2] und die Xbox Series S wurde nach einem Leak am 8. September 2020 von Microsoft über Twitter offiziell bestätigt. Die Konsolen stehen in Konkurrenz zu Sonys Konsole PlayStation 5 der aktuellen und der zur vorherigen Konsolengeneration gehörenden Nintendo Switch. Bis Januar 2022 wurden geschätzt rund 12 Millionen Konsolen ausgeliefert.', 'platform025.php'),
+(25, 'Xbox Series', NULL, 1, 22, 9, '../img/platform_logos/platform025_logo.jpg', '../img/platform_photos/platform025_photo.jpg', 5, 'CD-ROM', 6.5, 24, NULL, '2020-11-10', 'Xbox Series X und Xbox Series S sind von Microsoft entwickelte stationäre Spielkonsolen und Nachfolger der Xbox One. Die Xbox Series X wurde auf der Electronic Entertainment Expo (E3) am 9. Juni 2019 vorgestellt[2] und die Xbox Series S wurde nach einem Leak am 8. September 2020 von Microsoft über Twitter offiziell bestätigt. Die Konsolen stehen in Konkurrenz zu Sonys Konsole PlayStation 5 der aktuellen und der zur vorherigen Konsolengeneration gehörenden Nintendo Switch. Bis Januar 2022 wurden geschätzt rund 12 Millionen Konsolen ausgeliefert.', 'platform025.php'),
 (26, 'Steam', NULL, 4, 20, NULL, '../img/platform_logos/platform026_logo.png', '../img/platform_photos/platform026_photo.png', 6, 'Download', NULL, NULL, NULL, '2003-09-12', 'Steam ist eine Internet-Vertriebsplattform für Computerspiele, Software, Filme, Serien und Computergeräte, die von der Valve Corporation entwickelt und betrieben wird. Sie verzeichnete laut Herstellerangaben im Jahr 2019 über eine Milliarde aktive Benutzerkonten.[1] Täglich nutzen etwa 47 Millionen Nutzer die Plattform (2018).[2] Im März 2020 wurde ein Rekord von über 20 Millionen gleichzeitigen Nutzern aufgestellt, davon über 6 Millionen aktive Spieler.', 'platform026.php'),
 (27, 'Ubisoft Connect', NULL, 4, 21, NULL, '../img/platform_logos/platform027_logo.png', '../img/platform_photos/platform027_photo.webp', 7, 'Download', NULL, NULL, NULL, '2012-07-03', 'Ubisoft Connect (formerly Uplay) is a digital distribution, digital rights management, multiplayer and communications service developed by Ubisoft to provide an experience similar to the achievements/trophies offered by various other game companies. The service is provided across various platforms. Ubisoft Connect is used exclusively by first-party Ubisoft games, and although some third-party ones are sold through the Ubisoft store, they do not use the Ubisoft Connect platform.', 'platform027.php'),
 (28, 'Virtual Boy', 'VB', 2, 1, 4, '../img/platform_logos/platform028_logo.png', '../img/platform_photos/platform028_photo.png', 1, 'VB Game Pak', 0.77, 7, 1, '1995-07-21', 'Der Virtual Boy (jap. バーチャルボーイ, Bācharu Bōi) ist ein stationäres Virtual-Reality-Headset von Nintendo, der 1995 in Japan und den USA veröffentlicht wurde. Der Virtual Boy ähnelt einer Tauchmaske, in die man hineinsieht. Jedes Auge nimmt dabei ein anderes, leicht versetztes Bild wahr, wodurch ein real wirkender 3D-Effekt erzeugt wird.', 'platform028.php');
@@ -944,7 +1010,38 @@ INSERT INTO `port` (`no`, `refGame`, `refPlatform`) VALUES
 (98, 88, 2),
 (99, 89, 2),
 (100, 89, 9),
-(101, 90, 9);
+(101, 90, 9),
+(102, 91, 10),
+(103, 91, 5),
+(104, 91, 2),
+(105, 91, 9),
+(106, 92, 2),
+(107, 91, 6),
+(108, 93, 10),
+(109, 93, 5),
+(110, 93, 2),
+(111, 93, 9),
+(112, 93, 6),
+(113, 94, 5),
+(114, 94, 2),
+(115, 94, 9),
+(116, 94, 6),
+(117, 95, 9),
+(118, 96, 5),
+(119, 96, 2),
+(120, 96, 9),
+(121, 96, 6),
+(122, 97, 9),
+(123, 99, 9),
+(124, 98, 5),
+(125, 98, 6),
+(126, 98, 2),
+(127, 98, 9),
+(128, 100, 6),
+(129, 101, 2),
+(130, 101, 9),
+(131, 102, 5),
+(132, 102, 6);
 
 -- --------------------------------------------------------
 
@@ -1056,7 +1153,16 @@ INSERT INTO `prequel` (`preNo`, `refOrigin`, `refPrequel`) VALUES
 (93, 87, 86),
 (94, 88, 87),
 (95, 89, 88),
-(96, 90, 89);
+(96, 90, 89),
+(97, 93, 91),
+(98, 94, 91),
+(99, 96, 94),
+(100, 96, 93),
+(101, 99, 95),
+(102, 100, 98),
+(103, 98, 96),
+(104, 101, 99),
+(105, 97, 101);
 
 -- --------------------------------------------------------
 
@@ -1107,7 +1213,15 @@ INSERT INTO `remake` (`reNo`, `refOrigin`, `refRemake`) VALUES
 (6, 40, 55),
 (7, 41, 56),
 (8, 4, 8),
-(9, 45, 63);
+(9, 45, 63),
+(13, 91, 102),
+(14, 93, 102),
+(15, 94, 102),
+(16, 96, 102),
+(17, 94, 95),
+(18, 96, 97),
+(19, 98, 99),
+(20, 100, 101);
 
 -- --------------------------------------------------------
 
@@ -1131,7 +1245,8 @@ INSERT INTO `remaster` (`remNo`, `refOrigin`, `refRemaster`) VALUES
 (3, 1, 2),
 (4, 20, 21),
 (5, 24, 25),
-(6, 28, 29);
+(6, 28, 29),
+(9, 91, 92);
 
 -- --------------------------------------------------------
 
@@ -1157,7 +1272,9 @@ INSERT INTO `series` (`sNo`, `name`) VALUES
 (6, 'WarioWare'),
 (7, 'Kirby'),
 (8, 'Ace Attorney'),
-(9, 'Wario Land');
+(9, 'Wario Land'),
+(10, 'Super Mario'),
+(11, 'Yoshi\'s Island');
 
 -- --------------------------------------------------------
 
@@ -1365,31 +1482,31 @@ ALTER TABLE `developer`
 -- AUTO_INCREMENT für Tabelle `game`
 --
 ALTER TABLE `game`
-  MODIFY `gNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `gNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT für Tabelle `game_developer`
 --
 ALTER TABLE `game_developer`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT für Tabelle `game_genre`
 --
 ALTER TABLE `game_genre`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT für Tabelle `game_mode`
 --
 ALTER TABLE `game_mode`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
 -- AUTO_INCREMENT für Tabelle `game_publisher`
 --
 ALTER TABLE `game_publisher`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT für Tabelle `genre`
@@ -1401,7 +1518,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT für Tabelle `list`
 --
 ALTER TABLE `list`
-  MODIFY `entryNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `entryNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT für Tabelle `mode`
@@ -1419,13 +1536,13 @@ ALTER TABLE `platform`
 -- AUTO_INCREMENT für Tabelle `port`
 --
 ALTER TABLE `port`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT für Tabelle `prequel`
 --
 ALTER TABLE `prequel`
-  MODIFY `preNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `preNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT für Tabelle `publisher`
@@ -1437,19 +1554,19 @@ ALTER TABLE `publisher`
 -- AUTO_INCREMENT für Tabelle `remake`
 --
 ALTER TABLE `remake`
-  MODIFY `reNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `reNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT für Tabelle `remaster`
 --
 ALTER TABLE `remaster`
-  MODIFY `remNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `remNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT für Tabelle `series`
 --
 ALTER TABLE `series`
-  MODIFY `sNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `sNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT für Tabelle `status`
